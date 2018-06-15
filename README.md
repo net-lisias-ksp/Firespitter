@@ -1,5 +1,5 @@
 Firespitter
-by Andreas Aakvik Gogstad (Snjo)
+by Andreas Aakvik Gogstad (net.lisias.ksp Unofficial fork)
 ===========
 
 Propeller plane and helicopter part modules for Kerbal Space Program.
@@ -21,3 +21,9 @@ For modders re-using the dll directly, you MUST place it in the Firespitter fold
 The right path is: [KSP_OS]\GameData\Firespitter\Plugins\
 
 Firespitter Partcatalog icon by KwirkyJ
+
+
+UPSTREAM
+--------
+
+https://github.com/snjo/Firespitter
