@@ -210,4 +210,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-*.zip
+.vs
+GameData/**/Firespitter.version
+Firespitter.dll
