@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using System.Reflection;
+using System.IO;
+using UnityEngine;
 
 namespace Firespitter
 {
@@ -38,7 +39,7 @@ namespace Firespitter
         }
 
         public static String AppPath = KSPUtil.ApplicationRootPath.Replace("\\", "/");
-        public static String PlugInDataPath = AppPath + "GameData/Firespitter/PluginData/";
+		public static String PlugInDataPath = Path.Combine(AppPath,"PluginData/Firespitter/");
 
         public static FloatCurve stringToFloatCurve(string curveString)
         {
