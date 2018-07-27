@@ -146,6 +146,7 @@
     <Compile Include="wheel\WheelClass.cs" />
     <Compile Include="wheel\WheelList.cs" />
     <Compile Include="Version.cs" />
+    <Compile Include="util\Log.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Documentation.txt" />
