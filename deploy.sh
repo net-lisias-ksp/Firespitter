@@ -10,11 +10,10 @@ deploy() {
 		if [ -f "${KSP_DEV}/GameData/$TARGETDIR/" ] ; then
 			cp "./$PROJECTSDIR/bin/Release/$DLL.dll" "${KSP_DEV/}GameData/$TARGETDIR/"
 		fi
-
 	fi
 	if [ -f "./$PROJECTSDIR/bin/Debug/$DLL.dll" ] ; then
-		if [ -f "${KSP_DEV}/GameData/$TARGETDIR/" ] ; then
-			cp "./$PROJECTSDIR/bin/Debug/$DLL.dll" "${KSP_DEV}/GameData/$TARGETDIR/"
+		if [ -d "${KSP_DEV}/GameData/$TARGETDIR/" ] ; then
+			cp "./$PROJECTSDIR/bin/Debug/$DLL.dll" "${KSP_DEV}GameData/$TARGETDIR/"
 		fi
 	fi
 }
