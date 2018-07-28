@@ -1,5 +1,7 @@
 # Firespitter :: Change Log
 
+* 2016-0416: 7.2.1 (BobPalmer) for KSP 1.1 (PRE)
+	+ Minor update to FuelSwitch for 1.1 compatibility
 * 2016-0402: 7.2.0 (BobPalmer) for KSP 1.1 (PRE)
 	+ Merge pull request #143 from snjo/DEVELOP
 	+ Updates for KSP 1.1
