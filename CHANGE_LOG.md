@@ -1,6 +1,8 @@
 # Firespitter :: Change Log
 
 
+* 2014-0530: Final 6.3.1 (snjo) for KSP 0.23.5
+	+ Wheel alignment guides end the scourge of crooked gear placement. Press F2 to toggle guide lines.
 * 2014-0522: Final 6.4 PRE1 (snjo) for KSP 0.23.5
 	+ Tweakable engines! Adjust the number of propeller blades, their length, and the engine size in the hangar!
 	+ Wheel alignment guides end the scourge of crooked gear placement. Press F2 to toggle guide lines.
