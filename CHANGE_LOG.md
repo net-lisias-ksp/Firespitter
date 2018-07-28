@@ -1,6 +1,19 @@
 # Firespitter :: Change Log
 
 
+* 2014-0531: 6.4 PRE1 (snjo) for KSP 0.23.5
+	+ Some parts moved to the Firespitter Legacy Parts Pack (not yet packaged)
+	+ Tweakable engines! Adjust the number of propeller blades, their length, and the engine size in the hangar!
+	+ New helicopter main rotor using aerodynamic lift on the blades and particle ground FX (currently constantly on)
+	+ Electric propeller and electric heli engine are using the new engine module, which trades some silly throttle bugs for new and exciting bugs
+	+ Modular fuel tanks. A single part with alternate texutres and fuel tanks. Toggle through the choices in the hangar. (oblong multi-tank and fuel drop tank)
+	+ Wheel alignment guides end the scourge of crooked gear placement. Press F2 to toggle guide lines.
+	+ A new engine module that supports atmospheric engines much better, separates engine start up time from throttle response, and allows for electric engines without the extra FScoolant resource.
+	+ Apache cockpit monitors are off by default to reduce lag. Click a button to turn them on.
+	+ Helicopter engines display a guide arrow to assist in putting them on the right way.
+	+ New texture switch, mesh switch and fuel tank switch modules allows for many varieties in a single part. Added normal-map-only support to tex switch.
+
+WARNING: Note that some parts are still WIP, including some that have replaced parts moved to legacy. This release is not part complete, and should only be used by the very curious 
 * 2014-0531: Legacy Parts (snjo) for KSP 0.23.5
 	+ legacy
 	+ removed old craft
