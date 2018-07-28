@@ -1,5 +1,8 @@
 # Firespitter :: Change Log
 
+* 2015-0624: 7.1.4 (BobPalmer) for KSP 1.0.4
+	+ Version compatibility update. Also included a separate ZIP for plugin only.
+	+ Note that this is just a patch to change version checking to 1.0.4, I've not encountered any breaking changes, but as always, balance will need to be reviewed.
 * 2015-0516: 7.1.3 (BobPalmer) for KSP 1.0.2
 	+ Wing and control surface fixes 
 * 2015-0511: 7.1.2 (BobPalmer) for KSP 1.0.2
