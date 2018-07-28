@@ -1,5 +1,8 @@
 # Firespitter :: Change Log
 
+* 2018-0326 7.9.0 (BobPalmer) for KSP 1.4.1
+	+ v7.9.0
+	+ KSP 1.4.1 
 * 2017-0528 7.6.0 (BobPalmer) for KSP 1.3
 	+ Merge pull request #185 from snjo/DEVELOP
 	+ Merge pull request #184 from snjo/master
