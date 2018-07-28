@@ -1,6 +1,9 @@
 # Firespitter :: Change Log
 
 
+* 2014-0718: 6.3.3 (snjo) for KSP 0.24
+	+ KSP 0.24 Compatibility.
+	+ Lots of plugin features for upcoming version 7, and features used in other mods like B9
 * 2014-0718: 7 Plugin (snjo) for KSP 0.23.5
 	+ v7plugin0.23.5
 	+ updated dll
