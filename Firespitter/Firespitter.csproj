@@ -147,9 +147,14 @@
     <Compile Include="wheel\WheelList.cs" />
     <Compile Include="Version.cs" />
     <Compile Include="util\Log.cs" />
+    <None Include="util\shaders\Nightvision.shader" />
+    <None Include="util\shaders\Unlit_Texture.shader" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Documentation.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="util\shaders\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
