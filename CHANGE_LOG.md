@@ -1,6 +1,9 @@
 # Firespitter :: Change Log
 
 
+* 2015-0504: 7.1 (snjo) for KSP 1.0.2
+	+ KSP 1.0.2 Compatibility
+	+ (see 7.0.PRE2 below for additional notes)
 * 2014-0901: 6.3.5 (snjo) for KSP 0.24.2
 	+ Plugin update for compatibility with various mods like B9
 	+ Some minor fixes to prices in cfg
