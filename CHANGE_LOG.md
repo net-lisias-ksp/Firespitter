@@ -1,5 +1,7 @@
 # Firespitter :: Change Log
 
+* 2016-0911 7.4.0 (BobPalmer) for KSP 1.2 PRE
+	+ Modder Preview - DLL Update 
 * 2016-0712 7.3.0 (BobPalmer) for KSP 1.1.3
 	+ Re-versioning 
 * 2016-0628 7.3 (BobPalmer) for KSP 1.1.3
