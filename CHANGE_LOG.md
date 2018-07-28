@@ -1,5 +1,8 @@
 # Firespitter :: Change Log
 
+* 2016-0402: 7.2.0 (BobPalmer) for KSP 1.1 (PRE)
+	+ Merge pull request #143 from snjo/DEVELOP
+	+ Updates for KSP 1.1
 * 2015-1109: 7.1.5 (BobPalmer) for KSP 1.0.5
 	+ This is a preliminary compatibility release for KSP 1.0.5 - please be sure to report any bugs/etc. in the forum thread.
 	+ Also includes a large number of config fixes fro Ruedii and khr15714n! 
