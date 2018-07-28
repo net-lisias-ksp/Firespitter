@@ -3,6 +3,7 @@
 	"URL": "https://raw.githubusercontent.com/net-lisias-kspu/Firespitter/master/Firespitter.version",
 	"DOWNLOAD":"https://github.com/net-lisias-kspu/Firespitter/releases",
 	"CHANGE_LOG":"https://raw.githubusercontent.com/net-lisias-kspu/Firespitter/CHANGE_LOG.md",
+	"CHANGE_LOG_URL":"https://raw.githubusercontent.com/net-lisias-kspu/Firespitter/CHANGES.md",
 	"GITHUB":{
 		"USERNAME":"net-lisias-kspu",
 		"REPOSITORY":"Firespitter",
