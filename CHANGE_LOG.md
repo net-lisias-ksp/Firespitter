@@ -1,5 +1,7 @@
 # Firespitter :: Change Log
 
+* 2016-1107 7.4.2 (BobPalmer) for KSP 1.2.1
+	+ Compile update, and some new options for ModuleAnimateGeneric from linuxgurugamer 
 * 2016-0911 7.4.1 (BobPalmer) for KSP 1.2
 	+ Recompile for KSP 1.2
 	+ Fixed biplane hatch
