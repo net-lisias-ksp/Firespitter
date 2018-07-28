@@ -1,6 +1,9 @@
 # Firespitter :: Change Log
 
 
+* 2014-0714: 6.3.4 (snjo) for KSP 0.24.2
+	+ KSP 0.24.2 Compatibility
+	+ Module cost configurable in FSfuelSwitch
 * 2014-0718: 6.3.3 (snjo) for KSP 0.24
 	+ KSP 0.24 Compatibility.
 	+ Lots of plugin features for upcoming version 7, and features used in other mods like B9
