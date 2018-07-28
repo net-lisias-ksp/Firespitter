@@ -1,5 +1,7 @@
 # Firespitter :: Change Log
 
+* 2017-0105 7.5.1 (BobPalmer) for KSP 1.2.2
+	+ Added a screen message when EVA repainting 
 * 2016-1217 7.5.0 (BobPalmer) for KSP 1.2.2
 	+ No changelog provided 
 * 2016-1107 7.4.2 (BobPalmer) for KSP 1.2.1
