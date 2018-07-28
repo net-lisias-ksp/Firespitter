@@ -1,6 +1,9 @@
 # Firespitter :: Change Log
 
 
+* 2014-0718: 7 Plugin (snjo) for KSP 0.23.5
+	+ v7plugin0.23.5
+	+ updated dll
 * 2014-0619: 7.0 PRE2 (snjo) for KSP 0.23.5
 	+ Some parts moved to the Firespitter Legacy Parts Pack. Download that to keep using existing craft files.
 	+ Tweakable engines! Adjust the number of propeller blades, their length, and the engine size in the hangar!
