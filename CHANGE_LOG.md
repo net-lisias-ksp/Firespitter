@@ -1,0 +1,2 @@
+# Firespitter :: Change Log
+
