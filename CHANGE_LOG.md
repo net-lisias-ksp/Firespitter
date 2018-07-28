@@ -1,5 +1,7 @@
 # Firespitter :: Change Log
 
+* 2015-0516: 7.1.3 (BobPalmer) for KSP 1.0.2
+	+ Wing and control surface fixes 
 * 2015-0511: 7.1.2 (BobPalmer) for KSP 1.0.2
 	+ Engine updates - should prevent propellers from blowing your wings off and taking them to space. 
 * 2015-0505: 7.1.1 (BobPalmer) for KSP 1.0.2
