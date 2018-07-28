@@ -145,10 +145,16 @@
     <Compile Include="wheel\FSwheelAlignment.cs" />
     <Compile Include="wheel\WheelClass.cs" />
     <Compile Include="wheel\WheelList.cs" />
-    <Compile Include="Version.cs" />
     <Compile Include="util\Log.cs" />
     <None Include="util\shaders\Nightvision.shader" />
     <None Include="util\shaders\Unlit_Texture.shader" />
+    <None Include="Version.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Version.cs</LastGenOutput>
+    </None>
+    <Compile Include="Version.cs">
+      <DependentUpon>Version.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Documentation.txt" />

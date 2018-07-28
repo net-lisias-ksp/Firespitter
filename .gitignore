@@ -213,3 +213,4 @@ pip-log.txt
 .vs
 GameData/**/Firespitter.version
 Firespitter.dll
+Version.cs
