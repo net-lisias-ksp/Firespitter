@@ -1,5 +1,7 @@
 # Firespitter :: Change Log
 
+* 2016-0514 7.2.4 (BobPalmer) for KSP 1.1.2
+	+ New biplane model and textures, old parts moved to legacy. 
 * 2016-0430 7.2.3 (BobPalmer) for KSP 1.1.2
 	+ Recompile for 1.1.2 
 * 2016-0416: 7.2.1 (BobPalmer) for KSP 1.1 (PRE)
