@@ -1,7 +1,8 @@
 # Firespitter :: Change Log
 
-
-* 2015-0504: 7.1 (snjo) for KSP 1.0.2
+* 2015-0505: 7.1.1 (BobPalmer) for KSP 1.0.2
+	+ Fixed issues with various attachment nodes
+* 2015-0504: 7.1 (BobPalmer) for KSP 1.0.2
 	+ KSP 1.0.2 Compatibility
 	+ (see 7.0.PRE2 below for additional notes)
 * 2014-0901: 6.3.5 (snjo) for KSP 0.24.2
