@@ -1,6 +1,10 @@
 # Firespitter :: Change Log
 
 
+* 2014-0522: Final 6.4 PRE1 (snjo) for KSP 0.23.5
+	+ Tweakable engines! Adjust the number of propeller blades, their length, and the engine size in the hangar!
+	+ Wheel alignment guides end the scourge of crooked gear placement. Press F2 to toggle guide lines.
+	+ A new engine module that supports atmospheric engines much better, separates engine start up time from throttle response, and allows for electric engines without the extra FScoolant resource.
 * 2014-0506: Final 6.3 (snjo) for KSP 0.23.5
 	+ Oblong round noses, short and long
 	+ Oblong to 0.625m adapter
