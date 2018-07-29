@@ -10,6 +10,7 @@ Propeller plane and helicopter part modules for Kerbal Space Program.
 * [Latest Release](https://github.com/net-lisias-kspu/Firespitter/releases)
 * [Source](https://github.com/net-lisias-kspu/Firespitter)
 * [Binaries](https://github.com/net-lisias-kspu/Firespitter/tree/Archive)
+* [Change Log](./CHANGE_LOG.md)
 
 ## Description
 
