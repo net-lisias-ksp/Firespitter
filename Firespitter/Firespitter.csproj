@@ -148,11 +148,11 @@
     <Compile Include="util\Log.cs" />
     <None Include="util\shaders\Nightvision.shader" />
     <None Include="util\shaders\Unlit_Texture.shader" />
-    <None Include="Version.tt">
+    <None Include="Properties\Version.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Version.cs</LastGenOutput>
     </None>
-    <Compile Include="Version.cs">
+    <Compile Include="Properties\Version.cs">
       <DependentUpon>Version.tt</DependentUpon>
     </Compile>
   </ItemGroup>
