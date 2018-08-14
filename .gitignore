@@ -2,3 +2,5 @@
 GameData/**/Firespitter.version
 Firespitter.dll
 **/Properties/Version.cs
+bin
+Firespitter/obj
