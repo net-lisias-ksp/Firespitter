@@ -1,6 +1,12 @@
 .vs
-GameData/**/Firespitter.version
-Firespitter.dll
-**/Properties/Version.cs
 bin
-Firespitter/obj
+obj
+GameData/**/*.dll
+GameData/**/*LICENSE
+GameData/**/NOTICE
+GameData/**/README.md
+GameData/**/CHANGE_LOG.md
+GameData/**/CHANGES.md
+GameData/**/*.version
+Source/*/Properties/Version.cs
+Source/*/*.user
