@@ -1,27 +1,35 @@
-Firespitter (Unofficial fork)
-=============================
-
-by Andreas Aakvik Gogstad (Snjo) - **Unofficial** fork by Lisias.
-
-## In a Hurry
+# Firespitter /L Unofficial 
 
 Propeller plane and helicopter part modules for Kerbal Space Program.
+
+By Andreas Aakvik Gogstad (Snjo) - **Unofficial** fork by Lisias.
+
+
+## In a Hurry
 
 * [Latest Release](https://github.com/net-lisias-kspu/Firespitter/releases)
 	+ [Binaries](https://github.com/net-lisias-kspu/Firespitter/tree/Archive)
 * [Source](https://github.com/net-lisias-kspu/Firespitter)
-* [Change Log](./CHANGE_LOG.md)
+* Documentation	
+	+ [Project's README](https://github.com/net-lisias-kspu/Firespitter/blob/master/README.md)
+	+ [Install Instructions](https://github.com/net-lisias-kspu/Firespitter/blob/master/INSTALL.md)
+	+ [Change Log](./CHANGE_LOG.md)
+	+ [TODO](./TODO.md) list
 
 
 ## Description
 
-Forum thread: http://forum.kerbalspaceprogram.com/threads/24551-Firespitter-propeller-plane-and-helicopter-parts
-
-Spaceport download: http://kerbalspaceport.com/firespitter-propeller-plane-parts/
+Forum thread: https://forum.kerbalspaceprogram.com/index.php?/topic/22583-*
 
 Module cfg documentation: http://tiny.cc/fsdoc
 
 Part use guide for players: http://tiny.cc/fsguide
+
+
+## Installation
+
+Detailed installation instructions are now on its own file (see the [In a Hurry](#in-a-hurry) section) and on the distribution file.
+
 
 ### License
 
