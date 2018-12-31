@@ -85,8 +85,6 @@
     <Compile Include="customization\FSmeshSwitch.cs" />
     <Compile Include="customization\FStextureSwitch2.cs" />
     <Compile Include="tools\MeshCreator.cs" />
-    <Compile Include="tools\CompatabilityChecker.cs" />
-    <Compile Include="tools\FSversionCheck.cs" />
     <None Include="unused\FShelicopterEngine.cs" />
     <Compile Include="engine\FSparticleFX.cs" />
     <Compile Include="engine\FSvelocityController.cs" />
