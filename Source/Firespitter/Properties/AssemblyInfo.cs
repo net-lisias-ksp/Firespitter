@@ -34,3 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion(Firespitter.Version.Number)]
 [assembly: AssemblyFileVersion(Firespitter.Version.Number)]
+
+[assembly: KSPAssemblyDependency("KSPe", 2, 1)]

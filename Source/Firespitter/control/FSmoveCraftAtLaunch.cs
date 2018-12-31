@@ -2,6 +2,7 @@
 using System.Linq;
 using System.IO;
 using UnityEngine;
+using Firespitter;
 
 
 public class FSmoveCraftAtLaunch : PartModule
@@ -107,7 +108,7 @@ public class FSmoveCraftAtLaunch : PartModule
         altitude = (float)vessel.altitude;
         popup.showMenu = false;
         string positionName = fileNameElement.inputText;
-        StreamWriter stream = new StreamWriter(Firespitter.Tools.PlugInDataPath + positionName + ".pos");
+        StreamWriter stream = KSPe.IO.Data.StreamWriter.CreateForType<CategoryFilter>(positionName + ".pos");
         stream.WriteLine(latitude);
         stream.WriteLine(longitude);
         stream.WriteLine(altitude);
@@ -117,7 +118,7 @@ public class FSmoveCraftAtLaunch : PartModule
 
     private void readPositionFromFile(string fileName)
     {        
-        StreamReader stream = new StreamReader(fileName); // exceptions handled by assembleCraft                              
+        StreamReader stream = KSPe.IO.Data.StreamReader.CreateForType<CategoryFilter>(fileName + ".pos");
         try
         {
             Debug.Log("Reading position file: " + fileName);                               
@@ -160,7 +161,7 @@ public class FSmoveCraftAtLaunch : PartModule
             popup.useInFlight = true;
         }
 
-        files = Directory.GetFiles(Firespitter.Tools.PlugInDataPath, "*.pos");
+        files = KSPe.IO.File<CategoryFilter>.Data.List("*.pos");
     }
 
     public void cancelSave()

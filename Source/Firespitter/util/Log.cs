@@ -1,70 +1,62 @@
-﻿using UnityEngine;
+﻿/*
+Firespitter /L
+Copyright 2013-2018, Andreas Aakvik Gogstad (Snjo)
+Copyright 2018, LisiasT
+
+    Developers: LisiasT
+
+    This file is part of Firespitter.
+*/
+using UnityEngine;
+
+using Logger = KSPe.Util.Log.Logger;
+using System.Diagnostics;
 
 namespace Firespitter
 {
-	public static class Log
-	{
-		public const string PREFIX = "Firespitter";
-		public static int debug = 0;
+    public static class Log
+    {
+        private static readonly Logger LOG = Logger.CreateForType<CategoryFilter>();
 
-		public static void info(string format, params object[] parms)
-		{
-			Debug.Log(string.Format("[{0}] {1}", PREFIX, string.Format(format, parms)));
-		}
-		public static void info(string text)
-		{
-			Debug.Log(string.Format("[{0}] {1}", PREFIX, text));
-		}
+        public static int debuglevel {
+            get => (int)LOG.level;
+            set => LOG.level = (KSPe.Util.Log.Level)(value % 6);
+        }
 
-		public static void warn(string format, params object[] parms)
-		{
-			Debug.LogWarning(string.Format("[{0}] WARNING {1}", PREFIX, string.Format(format, parms)));
-		}
-		public static void warn(string text)
-		{
-			Debug.LogWarning(string.Format("[{0}] WARNING {1}", PREFIX, text));
-		}
+        public static void log(string format, params object[] @parms)
+        {
+            LOG.force(format, parms);
+        }
 
-		public static void err(string format, params object[] parms)
-		{
-			Debug.LogError(string.Format("[{0}] ERROR {1}", PREFIX, string.Format(format, parms)));
-		}
-		public static void err(string text)
-		{
-			Debug.LogError(string.Format("[{0}] ERROR {1}", PREFIX, text));
-		}
+        public static void detail(string format, params object[] @parms)
+        {
+            LOG.detail(format, parms);
+        }
 
-		public static void ex(MonoBehaviour offended, System.Exception e)
-		{
-			Debug.LogError(string.Format("[{0}] ERROR {1}", PREFIX, string.Format("{0} raised Exception {1}", offended.name, e.ToString())));
-			Debug.LogException(e, offended);
-		}
+        public static void info(string format, params object[] @parms)
+        {
+            LOG.info(format, parms);
+        }
 
-		public static void dbg(string format, params object[] parms)
-		{
-			if (debug > 0) Debug.Log(string.Format("[{0}] DEBUG {1}", PREFIX, string.Format(format, parms)));
-		}
-		public static void dbg(string text)
-		{
-			if (debug > 0) Debug.Log(string.Format("[{0}] DEBUG {1}", PREFIX, text));
-		}
+        public static void warn(string format, params object[] @parms)
+        {
+            LOG.warn(format, parms);
+        }
 
-		public static void dbgWarn(string format, params object[] parms)
-		{
-			if (debug > 1) Debug.Log(string.Format("[{0}] DEBUG WARNING {1}", PREFIX, string.Format(format, parms)));
-		}
-		public static void dbgWarn(string text)
-		{
-			if (debug > 1) Debug.Log(string.Format("[{0}] DEBUG WARNING {1}", PREFIX, text));
-		}
+        public static void err(string format, params object[] parms)
+        {
+            LOG.error(format, parms);
+        }
 
-		public static void dbgGui(MonoBehaviour logger, string format, params object[] parms)
-		{
-			if (debug > 2) Debug.Log(string.Format("[{0}] DEBUG GUI {1} - {2}", PREFIX, logger.name, string.Format(format, parms)));
-		}
-		public static void dbgGui(MonoBehaviour logger, string text)
-		{
-			if (debug > 2) Debug.Log(string.Format("[{0}] DEBUG GUI {1} - {2}", PREFIX, logger.name, text));
-		}
-	}
+        public static void ex(MonoBehaviour offended, System.Exception e)
+        {
+            LOG.error(offended, e);
+        }
+
+        [Conditional("DEBUG")]
+        public static void dbg(string format, params object[] @parms)
+        {
+            LOG.dbg(format, parms);
+        }
+    }
 }

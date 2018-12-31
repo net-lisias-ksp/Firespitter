@@ -38,9 +38,6 @@ namespace Firespitter
             return result;
         }
 
-        public static String AppPath = KSPUtil.ApplicationRootPath.Replace("\\", "/");
-		public static String PlugInDataPath = Path.Combine(AppPath,"PluginData/Firespitter/");
-
         public static FloatCurve stringToFloatCurve(string curveString)
         {
             FloatCurve resultCurve = new FloatCurve();
