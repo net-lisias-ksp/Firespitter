@@ -118,13 +118,13 @@ public class FSmoveCraftAtLaunch : PartModule
 
     private void readPositionFromFile(string fileName)
     {        
-        StreamReader stream = KSPe.IO.Data.StreamReader.CreateForType<CategoryFilter>(fileName + ".pos");
+        StreamReader stream = KSPe.IO.Data.StreamReader.CreateForType<CategoryFilter>(fileName);
         try
         {
             Debug.Log("Reading position file: " + fileName);                               
-                float.TryParse(stream.ReadLine(), out latitude);
-                float.TryParse(stream.ReadLine(), out longitude);
-                float.TryParse(stream.ReadLine(), out altitude);
+            float.TryParse(stream.ReadLine(), out latitude);
+            float.TryParse(stream.ReadLine(), out longitude);
+            float.TryParse(stream.ReadLine(), out altitude);
         }
         catch (Exception e)
         {            
