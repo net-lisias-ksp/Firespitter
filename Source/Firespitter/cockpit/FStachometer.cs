@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class FStachometer : InternalModule
 {
     [KSPField]
@@ -48,7 +50,7 @@ class FStachometer : InternalModule
 
     private void nextEngine()
     {
-        //Debug.Log("next button clicked");
+        Log.dbg("next button clicked");
         if (oldPartCount != vessel.parts.Count || engines.Count < 1 || !hasEngines)
             updateEngineList();
         if (hasEngines)
@@ -59,7 +61,7 @@ class FStachometer : InternalModule
                 selectedEngineNumber = 0;
             }
             engineSelectionDial.updateNumber((float)selectedEngineNumber + 1);
-            //Debug.Log("selected engine: " + selectedEngineNumber + ", engines: " + engines.Count);
+            Log.dbg("selected engine: {0}, engines: {1}", selectedEngineNumber, engines.Count);
         }
     }
 
@@ -78,7 +80,7 @@ class FStachometer : InternalModule
             catch
             {
                 //useEngineSelection = false;
-                Debug.Log("FStachometer: No button or dial, disabling engine selection");
+                Log.dbg("FStachometer: No button or dial, disabling engine selection");
             }
 
             RPMneedle = internalProp.FindModelTransform(RPMneedleName);
@@ -105,7 +107,7 @@ class FStachometer : InternalModule
         //float limiter = engine.thrustPercentage / 100f;
         //float rpm = engine.normalizedThrustOutput;
         //float heat = engine.part.maxTemp / engine.part.temperature;
-        //Debug.Log("tLimit: " + limiter + " (" + engine.thrustPercentage + ") rpm: " + rpm + " heat: " + heat);
+        //Log.dbg("tLimit: {0} ({1}) rpm: {2} heat: {3}", limiter, engine.thrustPercentage, rpm, heat);
     }
 
     public override void OnUpdate()
@@ -136,7 +138,7 @@ class FStachometer : InternalModule
 
     private void updateEngineList()
     {
-        //Debug.Log("updating engine list");
+        Log.dbg("updating engine list");
         engines.Clear();
         foreach (Part p in vessel.parts)
         {

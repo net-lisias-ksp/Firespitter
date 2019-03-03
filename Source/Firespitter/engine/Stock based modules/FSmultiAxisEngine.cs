@@ -182,7 +182,7 @@ namespace Firespitter.engine
                 if (gimbalTransformName == string.Empty)
                 {
                     useReferenceGimbal = false;
-                    Debug.Log("FSmultiAxisEngine: gimbal transform name empty");
+                    Log.dbg("FSmultiAxisEngine: gimbal transform name empty");
                 }
                 else
                 {
@@ -196,13 +196,13 @@ namespace Firespitter.engine
                         if (pitchGimbalExtreme == null)
                         {
                             usePitch = false;
-                            Debug.Log("FSmultiAxisEngine: pitch gimbal extreme not found");
+                            Log.dbg("FSmultiAxisEngine: pitch gimbal extreme not found");
                         }
 
                         if (yawGimbalExtreme == null)
                         {
                             usePitch = false;
-                            Debug.Log("FSmultiAxisEngine: yaw gimbal extreme not found");
+                            Log.dbg("FSmultiAxisEngine: yaw gimbal extreme not found");
                         }
 
                         gimbalDefaultRotation = gimbalTransform.rotation;
@@ -210,7 +210,7 @@ namespace Firespitter.engine
                     else
                     {
                         useReferenceGimbal = false;
-                        Debug.Log("FSmultiAxisEngine: gimbal transform not found: " + gimbalTransformName);
+                        Log.dbg("FSmultiAxisEngine: gimbal transform not found: {0}", gimbalTransformName);
                     }
                 }
             }

@@ -73,7 +73,7 @@ namespace Firespitter.animation
                 setPlayMode(isAnimating);
             }
             else
-                Debug.Log("Could not find anim " + animationName);
+                Log.info("Could not find anim " + animationName);
 
             Events["toggleEvent"].guiName = toggleActionName;
             Actions["toggleAction"].guiName = toggleActionName;

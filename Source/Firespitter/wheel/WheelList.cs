@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class WheelList
 {
     public List<WheelClass> wheels;
@@ -92,7 +94,7 @@ class WheelList
             for (int i = 0; i < wheels.Count; i++)
             {
                 wheels[i].wheelCollider.motorTorque = value;
-                //Debug.Log("torque: " + value);
+                Log.dbg("torque: {0}", value);
             }
         }
     }

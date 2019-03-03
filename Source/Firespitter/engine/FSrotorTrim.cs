@@ -133,7 +133,7 @@ namespace Firespitter.engine
             }
             else
             {
-                Debug.Log("FSrotorTrim: Could not find partTransform '" + targetPartObject + "', disabling module");
+                Log.info("FSrotorTrim: Could not find partTransform '{0}', disabling module", targetPartObject);
             }
             modifiedUp = new GameObject("ModifiedUpTransform").transform;
             modifiedUp.parent = part.transform;

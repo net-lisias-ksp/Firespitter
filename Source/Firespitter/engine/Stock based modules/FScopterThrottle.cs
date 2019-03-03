@@ -221,7 +221,7 @@ namespace Firespitter.engine
                         if (RotorParent.transform.localEulerAngles.y > parkedBladeRotation + 1.1f || RotorParent.transform.localEulerAngles.y < parkedBladeRotation - 1.1f)
                         {
                             RotorParent.transform.localEulerAngles += new Vector3(0, 1, 0);
-                            //Debug.Log("resetting blades");                        
+                            Log.dbg("resetting blades");                        
                         }
                     }
                 }

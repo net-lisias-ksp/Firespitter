@@ -75,7 +75,7 @@ namespace Firespitter.engine
                                       
             if (particleTexture == null)
             {
-                Debug.Log("FSgroundParticles: particle texture loading error");
+                Log.info("FSgroundParticles: particle texture loading error");
                 // it should use the default particle in this case, or just some pink crap maybe
             }
             else
@@ -140,13 +140,12 @@ namespace Firespitter.engine
             // TODO: make prop wash appear on the ocean surface
 
             //float seaAltitude = Vector3.Distance(washDisc.transform.position, vessel.mainBody.position) - (float)vessel.mainBody.Radius;
+            //Log.dbg("seaAltitude: {0}", seaAltitude);
             //if (seaAltitude < 0f)
             //{
             //    washDisc.transform.Translate(vessel.upAxis * seaAltitude);
             //    distanceFromGround = Vector3.Distance(thrustTransform.position, washDisc.transform.position);
             //}
-
-            //Debug.Log("seaAltitude: " + seaAltitude);
 
             // rotate the disc so it's horizontal (does not follow the terrain slope though. Maybe there is a terrain normal to look at, but it looks OK on hills as is)
             washDisc.transform.LookAt(transform.position + vessel.upAxis, Vector3.forward);                 

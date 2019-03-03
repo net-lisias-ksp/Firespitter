@@ -52,7 +52,7 @@ namespace Firespitter.wheel
 
             createTextures();
 
-            Debug.Log("create guideLine");
+            Log.info("create guideLine");
             guideLine = part.gameObject.GetComponent<LineRenderer>() ?? part.gameObject.AddComponent<LineRenderer>();
             guideLine.SetWidth(0.02f, 0.02f);
 			// TODO: A way to ressurrect lost Shaders.
@@ -60,7 +60,7 @@ namespace Firespitter.wheel
 			guideLine.material.SetTexture("_MainTex", guideLineTex);
             guideLine.SetVertexCount(14);
 
-            Debug.Log("create wheelLine");
+            Log.info("create wheelLine");
             wheelLine = wheel.GetComponent<LineRenderer>() ?? wheel.AddComponent<LineRenderer>();
             wheelLine.SetWidth(0.02f, 0.02f);
 			wheelLine.material = new Material(Shader.Find("Unlit/Texture") ?? Shader.Find("Standard"));
@@ -156,7 +156,7 @@ namespace Firespitter.wheel
                 anglePointUpX = new Vector3(wheelPointUp.x, guidePointUp.y, guidePointUp.z);
                 anglePointUpZ = new Vector3(guidePointUp.x, guidePointUp.y, wheelPointUp.z);
 
-                //Debug.Log("guideLine " + part.GetInstanceID());
+                Log.info("guideLine {0}", part.GetInstanceID());
 
                 guideLine.SetPosition(0, anglePointUpX);
                 guideLine.SetPosition(1, guidePointUp);
@@ -173,7 +173,7 @@ namespace Firespitter.wheel
                 guideLine.SetPosition(12, guidePointBack);
                 guideLine.SetPosition(13, anglePointBackVertical);
 
-                //Debug.Log("wheelLine " + part.GetInstanceID());
+                Log.dbg("wheelLine {0}", part.GetInstanceID());
 
                 wheelLine.SetPosition(0, wheelPointUp);
                 wheelLine.SetPosition(1, centerPoint);

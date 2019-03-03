@@ -57,6 +57,11 @@ namespace Firespitter
 
         private void Awake()
         {
+#if DEBUG
+            Log.debuglevel = 5;
+#else
+            Log.debuglevel = 3;
+#endif
             GameEvents.onGUIEditorToolbarReady.Add(addIIfilter);
         }
     }

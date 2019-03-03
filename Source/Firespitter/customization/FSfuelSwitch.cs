@@ -59,28 +59,28 @@ namespace Firespitter.customization
 
         public override void OnAwake()
         {
-            //Debug.Log("FS AWAKE "+initialized+" "+configLoaded+" "+resourceAmounts);
+            Log.dbg("FS AWAKE {0} {1} {2}", initialized, configLoaded, resourceAmounts);
             if (configLoaded)
             {
                 initializeData();
             }
-            //Debug.Log("FS AWAKE DONE " + (configLoaded ? tankList.Count.ToString() : "NO CONFIG"));
+            Log.dbg("FS AWAKE DONE {0}", (configLoaded ? tankList.Count.ToString() : "NO CONFIG"));
         }
 
         public override void OnLoad(ConfigNode node)
         {
             base.OnLoad(node);
-            //Debug.Log("FS LOAD " + initialized + " " + resourceAmounts+configLoaded);
+            Log.dbg("FS LOAD {0} {1} {2}", initialized, resourceAmounts, configLoaded);
             if (!configLoaded)
             {
                 initializeData();
             }
             if (basePartMass != part.mass)
             {
-                Debug.LogError("Error: FSFuelSwitch Mass Discrepancy detected in part '" + part.name + "'.", part);
+                Log.err("FSFuelSwitch Mass Discrepancy detected in part '{0}'!", part.name);
             }
             configLoaded = true;
-            //Debug.Log("FS LOAD DONE " + tankList.Count);
+            Log.dbg("FS LOAD DONE {0}", tankList.Count);
         }
 
         private void initializeData()
@@ -164,7 +164,7 @@ namespace Firespitter.customization
                 }
             }
 
-            //Debug.Log("refreshing UI");
+            Log.dbg("refreshing UI");
 
             if (tweakableUI == null)
             {
@@ -176,7 +176,7 @@ namespace Firespitter.customization
             }
             else
             {
-                Debug.Log("no UI to refresh");
+                Log.info("no UI to refresh");
             }
         }
 
@@ -197,7 +197,7 @@ namespace Firespitter.customization
                     {
                         if (tankList[tankCount].resources[resourceCount].name != "Structural")
                         {
-                            //Debug.Log("new node: " + tankList[i].resources[j].name);
+                            //Log.dbg("new node: {0}", tankList[i].resources[j].name);
                             ConfigNode newResourceNode = new ConfigNode("RESOURCE");
                             newResourceNode.AddValue("name", tankList[tankCount].resources[resourceCount].name);
                             newResourceNode.AddValue("maxAmount", tankList[tankCount].resources[resourceCount].maxAmount);
@@ -210,12 +210,12 @@ namespace Firespitter.customization
                                 newResourceNode.AddValue("amount", tankList[tankCount].resources[resourceCount].amount);
                             }
 
-                            //Debug.Log("add node to part");
+                            Log.dbg("add node to part");
                             currentPart.AddResource(newResourceNode);                          
                         }
                         else
                         {
-                            //Debug.Log("Skipping structural fuel type");
+                            Log.dbg("Skipping structural fuel type");
                         }
                     }
                 }
@@ -276,7 +276,7 @@ namespace Firespitter.customization
             {
                 initialResourceTankArray = resourceTankArray;
             }
-            //Debug.Log("FSDEBUGRES: " + resourceTankArray.Length+" "+resourceAmounts);
+            Log.dbg("FSDEBUGRES: {0} {1}", resourceTankArray.Length, resourceAmounts);
             for (int tankCount = 0; tankCount < resourceTankArray.Length; tankCount++)
             {
                 resourceList.Add(new List<double>());
@@ -297,7 +297,7 @@ namespace Firespitter.customization
                     }
                     catch
                     {
-                        Debug.Log("FSfuelSwitch: error parsing resource amount " + tankCount + "/" + amountCount + ": '" + resourceTankArray[amountCount] + "': '" + resourceAmountArray[amountCount].Trim()+"'");
+                        Log.err("FSfuelSwitch: error parsing resource amount {0}/{1}: '{2}': '{3}'", tankCount, amountCount, resourceTankArray[amountCount], resourceAmountArray[amountCount].Trim());
                     }
                 }
             }

@@ -54,7 +54,7 @@ namespace Firespitter.engine
             }
             else
             {
-                Debug.Log("KTvelocityController: Transforms not found named " + thrustTransformName + ", disabling the module");
+                Log.info("KTvelocityController: Transforms not found named {0}, disabling the module", thrustTransformName);
                 this.enabled = false;
             }
 
@@ -68,7 +68,7 @@ namespace Firespitter.engine
                     {
                         particleFX[i] = new Firespitter.FSparticleFX(transformArray[i].gameObject, particleTexture);
                         particleFX[i].EmitterLocalVelocity = EmitterLocalVelocity;
-                        //Debug.Log("KTvelocityController: particle texture found: " + particleTextureName);
+                        Log.dbg("KTvelocityController: particle texture found: {0}", particleTextureName);
                         particleFX[i].setupFXValues();
                         particleFX[i].pEmitter.minEmission = 0f;
                         particleFX[i].pEmitter.maxEmission = 0f;
@@ -78,7 +78,7 @@ namespace Firespitter.engine
                 else
                 {
                     useFX = false;
-                    Debug.Log("KTvelocityController: particle texture not found, disabling fx");
+                    Log.info("KTvelocityController: particle texture not found, disabling fx");
                 }
             }
         }
@@ -88,14 +88,14 @@ namespace Firespitter.engine
             base.OnFixedUpdate();
             if (transformsFound)
             {
-                //Debug.Log("Entering fixed update");
+                Log.dbg("Entering fixed update");
                 try
                 {
                     velocityDirection = part.gameObject.GetComponent<Rigidbody>().velocity;
                 }
                 catch
                 {
-                    //Debug.Log("failed to find rigidbody velocity");
+                    Log.dbg("failed to find rigidbody velocity");
                     return;
                 }
 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class FSwingBase : PartModule
 {    
     #region kspfields
@@ -474,11 +476,11 @@ class FSwingBase : PartModule
             // Check if a stock wing module is present, if not, manipulate FSliftSurface stuff instead.
             if (affectStockWingModule)
             {
-                //Debug.Log("FSwing: getting stock wing module");
+                Log.dbg("FSwing: getting stock wing module");
                 stockWingModule = part.FindModuleImplementing<ModuleControlSurface>();
                 if (stockWingModule != null)
                 {
-                    //Debug.Log("FSwing: success");
+                    Log.dbg("FSwing: success");
                 }
                 else
                 {
@@ -501,7 +503,7 @@ class FSwingBase : PartModule
                     {
                         mainLift = surface;
                         mainLiftAreaDefault = surface.wingArea;
-                        //Debug.Log("FSwing: Slat assigned main lift to: " + surface.liftTransformName);
+                        Log.dbg("FSwing: Slat assigned main lift to: {0}", surface.liftTransformName);
                         break;
                     }
                 }
@@ -569,24 +571,24 @@ class FSwingBase : PartModule
                 float dotRight = Vector3.Dot(part.transform.right, vessel.ReferenceTransform.right);                
                 if (dotRight < -0.01f && allowInvertOnLeft)                
                 {
-                    //Debug.Log("FSwing: part is on the left: " + relativePosition);
+                    Log.dbg("FSwing: part is on the left: {0}", relativePosition);
                     wingIsPointingLeft = true;
                 }
                 else
                 {
-                    //Debug.Log("FSwing: part is on the right: " + relativePosition);
+                    Log.dbg("FSwing: part is on the right: {0}", relativePosition);
                     wingIsPointingLeft = false;
                 }
 
                 float dotUp = Vector3.Dot(part.transform.right, vessel.ReferenceTransform.forward); //forward is up! ugh!
                 if (dotUp > 0f)
                 {
-                    //Debug.Log("FSwing: part is on the left: " + relativePosition);
+                    Log.dbg("FSwing: part is on the left: {0}", relativePosition);
                     wingIsPointingUp = true;
                 }
                 else
                 {
-                    //Debug.Log("FSwing: part is on the right: " + relativePosition);
+                    Log.dbg("FSwing: part is on the right: {0}", relativePosition);
                     wingIsPointingUp = false;
                 }
 
@@ -707,9 +709,9 @@ class FSwingBase : PartModule
     public void ApplyDamage(float amount) // used by InfiniteDice's damage code. 0f is broken, 1f is OK
     {
         partHealth = amount;
-        Debug.Log("=== FSwing damage set to " + amount + " ===");
+        Log.info("=== FSwing damage set to {0} ===", amount);
         ctrlSurfaceRange = originalCtrlSurfaceRange * amount;
-        Debug.Log("=== FSwing range now " + ctrlSurfaceRange + " ===");
+        Log.info("=== FSwing range now {0} ===", ctrlSurfaceRange);
 
         if (amount >= 1f)
             status = "Undamaged";
@@ -723,7 +725,7 @@ class FSwingBase : PartModule
 
         if (showTweakables)
         {
-            Debug.Log("FSwing - setting fields to " + jammed);
+            Log.info("FSwing - setting fields to {0}", jammed);
             Fields["status"].guiActive = (amount < 1f);
             Fields["pitchResponse"].guiActive = !jammed;
             Fields["rollResponse"].guiActive = !jammed;

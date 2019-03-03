@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class FSnodeLoader
 {
     public Part part;
@@ -56,7 +58,7 @@ class FSnodeLoader
                 }
                 catch
                 {
-                    Debug.Log("Error parsing vector2");
+                    Log.dbg("Error parsing vector2");
                 }
             }
         }

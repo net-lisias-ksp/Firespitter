@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class FSwheel : PartModule
 {
     #region variables
@@ -519,7 +521,7 @@ class FSwheel : PartModule
         }
         catch
         {
-            Debug.Log("FSwheel: Could not set deployment state " + deploymentState);
+            Log.dbg("FSwheel: Could not set deployment state {0}", deploymentState);
         }
 
         #region animation
@@ -574,7 +576,7 @@ class FSwheel : PartModule
                         }
                         else
                         {
-                            Debug.Log("FSwheel: missing wheel mesh " + wheelMeshName + suffix);
+                            Log.info("FSwheel: missing wheel mesh {0}{1}", wheelMeshName, suffix);
                         }
                         Transform suspensionTransform = part.FindModelTransform(suspensionParentName + suffix);
                         if (suspensionTransform != null)
@@ -583,13 +585,13 @@ class FSwheel : PartModule
                         }
                         else
                         {
-                            Debug.Log("FSwheel: missing suspensionParent " + suspensionParentName + suffix);
+                            Log.info("FSwheel: missing suspensionParent {0}{1}", suspensionParentName, suffix);
                         }
                     }
                 }
                 else
                 {
-                    Debug.Log("FSwheel: missing wheel collider " + wheelColliderName + suffix);
+                    Log.info("FSwheel: missing wheel collider {0}{1}", wheelColliderName, suffix);
                 }
             }
 
@@ -603,22 +605,22 @@ class FSwheel : PartModule
             }
 
             // set the motor direction based on the first found wheelColliders orientation
-            //Debug.Log("FSwheel: wheelist count is " + wheelList.wheels.Count);
+            Log.dbg("FSwheel: wheelist count is {0}", wheelList.wheels.Count);
             if (wheelList.wheels.Count > 0)
             {
-                Debug.Log("FSwheel: reversemotorset: " + reverseMotorSet);
+                Log.info("FSwheel: reversemotorset: {0}", reverseMotorSet);
                 if (!reverseMotorSet) //run only the first time the craft is loaded
                 {
                     float dot = Vector3.Dot(wheelList.wheels[0].wheelCollider.transform.forward, vessel.ReferenceTransform.up); // up is forward
                     if (dot < 0) // below 0 means the engine is on the left side of the craft
                     {
                         reverseMotor = true;
-                        //Debug.Log("FSwheel: Reversing motor, dot: " + dot);
+                        Log.dbg("FSwheel: Reversing motor, dot: {0}", dot);
                     }
                     else
                     {
                         reverseMotor = false;
-                        //Debug.Log("FSwheel: Motor reversing skipped, dot: " + dot);
+                        Log.dbg("FSwheel: Motor reversing skipped, dot: {0}", dot);
                     }
                     if (motorStartsReversed)
                         reverseMotor = !reverseMotor;
@@ -1055,10 +1057,10 @@ class FSwheel : PartModule
         fxLevel = Mathf.Clamp((float)vessel.horizontalSrfSpeed, 0f, 40f) / 40f;
         fxLevel *= deltaRPM / 200f;
         part.Effect("touchdown", fxLevel);
-        //Debug.Log("wheels: " + wheelList.wheels.Count + ", current: " + wheelNumber);
+        Log.dbg("wheels: {0}, current: {1}", wheelList.wheels.Count, wheelNumber);
         wheelList.wheels[wheelNumber].screechCountdown = 0.5f;
-        //Debug.Log(Vector3.Distance(vessel.ReferenceTransform.position, wheelList.wheels[wheelNumber].smokeFX.gameObject.transform.position));
-        // play one shot audio                
+        Log.dbg("Distance {0}", Vector3.Distance(vessel.ReferenceTransform.position, wheelList.wheels[wheelNumber].smokeFX.gameObject.transform.position));
+        // TODO play one shot audio                
     }
 
     private void updateScreechEffect(int wheelNumber)

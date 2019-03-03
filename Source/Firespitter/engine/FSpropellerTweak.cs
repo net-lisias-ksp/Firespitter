@@ -215,7 +215,7 @@ namespace Firespitter.engine
                     //for (int i = bladeNumber; i < blades.Count; i++)
                     for (int i = blades.Count - 1; i >= bladeNumber-1 && i > 0; i--)
                     {
-                        //Debug.Log("too many blades, destroying blade " + i);
+                        Log.dbg("too many blades, destroying blade {0}", i);
                         GameObject.Destroy(blades[i]);
                         blades.RemoveAt(i);
                     }
@@ -304,12 +304,12 @@ namespace Firespitter.engine
 
                     if (exhausts.Count > amount && exhausts.Count > 1)
                     {
-                        //Debug.Log("too many exhausts");
+                        Log.dbg("too many exhausts");
                         for (int i = amount; i < exhausts.Count; i++)
                         {
                             if (i > 0)
                             {
-                                //Debug.Log("destroying exhaust " + i);
+                                Log.dbg("destroying exhaust {0}", i);
                                 GameObject.Destroy(exhausts[i]);
                                 exhausts.RemoveAt(i);
                             }
@@ -329,7 +329,7 @@ namespace Firespitter.engine
         {
             if (!HighLogic.LoadedSceneIsFlight && !HighLogic.LoadedSceneIsEditor) return;            
 
-            //Debug.Log("FSpropellerTweak Onstart running on " + part.GetInstanceID());
+            Log.dbg("FSpropellerTweak Onstart running on {0}", part.GetInstanceID());
 
             blades = new List<GameObject>();
             exhausts = new List<GameObject>();
@@ -351,7 +351,7 @@ namespace Firespitter.engine
                 engineLengthSliderRaw = engineLengthSlider;
                 BladeLengthSliderRaw = bladeLengthSlider;
 
-                //Debug.Log("FSpropellerTweak: find blade root");
+                Log.dbg("FSpropellerTweak: find blade root");
 
                 Transform originalBlade = part.FindModelTransform(bladeRootName);
                 if (originalBlade != null)
@@ -359,7 +359,7 @@ namespace Firespitter.engine
                     blades.Add(originalBlade.gameObject);
                 }
 
-                //Debug.Log("FSpropellerTweak: find exhaust");
+                Log.dbg("FSpropellerTweak: find exhaust");
 
                 //GameObject originalExhaust = GameObject.Find(exhaustName);
                 Transform originalExhaust = part.FindModelTransform(exhaustName);
@@ -368,22 +368,22 @@ namespace Firespitter.engine
                     exhausts.Add(originalExhaust.gameObject);
                 }
 
-                //Debug.Log("FSpropellerTweak: find engine extension");
+                Log.dbg("FSpropellerTweak: find engine extension");
 
                 Transform engineExtensionTransform = part.FindModelTransform(engineExtenderName);
                 if (engineExtensionTransform != null)
                     engineExtension = engineExtensionTransform.gameObject;
 
-                //Debug.Log("FSpropellerTweak: find propeller root");
+                Log.dbg("FSpropellerTweak: find propeller root");
 
                 propellerRoot = part.FindModelTransform(propellerRootName);
-                if (propellerRoot == null) Debug.Log("FSpropellerTweak: Nasty error, no propeller root found named " + propellerRootName);
+                if (propellerRoot == null) Log.log("FSpropellerTweak: Nasty error, no propeller root found named {0}", propellerRootName);
 
                 movableSection = part.FindModelTransform(movableSectionName);
                 engineEndPoint = part.FindModelTransform(engineEndPointName);
                 //centerOfMass = part.FindModelTransform(centerOfMassName);
 
-                //Debug.Log("FSpropellerTweak: Blades: " + blades.Count);
+                Log.dbg("FSpropellerTweak: Blades: {0}", blades.Count);
 
                 updateBladeList();
                 updateEngineLength();
@@ -409,7 +409,7 @@ namespace Firespitter.engine
         {
             for (int i = blades.Count - 1; i > 0; i--)
             {
-                //Debug.Log("destroying blade " + i);
+                Log.dbg("destroying blade {0}", i);
                 Destroy(blades[i]);
                 blades.RemoveAt(i);
             }
@@ -426,7 +426,7 @@ namespace Firespitter.engine
         {
             for (int i = exhausts.Count - 1; i > 0; i--)
             {
-                //Debug.Log("destroying blade " + i);
+                Log.dbg("destroying blade {0}", i);
                 Destroy(exhausts[i]);
                 exhausts.RemoveAt(i);
             }
@@ -444,7 +444,7 @@ namespace Firespitter.engine
         {
             if (HighLogic.LoadedSceneIsEditor && initialized && part.parent != null)
             {
-                //Debug.Log("FSpropellerTweak Update running on " + part.GetInstanceID());
+                Log.dbg("FSpropellerTweak Update running on {0}", part.GetInstanceID());
 
                 bladeNumber = Mathf.FloorToInt(bladeNumberRaw);
                 exhaustNumber = Mathf.FloorToInt(engineLengthSliderRaw);

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using Log = Firespitter.Log;
+
 public class FScameraToTV : InternalModule
 {
     public string TVcamName = "TVcam";
@@ -43,7 +45,7 @@ public class FScameraToTV : InternalModule
                 if (partTransform != null)
                 {
                     TVcamTransform = partTransform.gameObject;
-                    //Debug.Log("FS: found cam transform");
+                    Log.dbg("FS: found cam transform");
                 }
             //}
         }
@@ -63,7 +65,7 @@ public class FScameraToTV : InternalModule
                 TVcam.clearFlags = CameraClearFlags.Skybox; // CameraClearFlags.SolidColor;
                 TVcam.backgroundColor = Color.magenta;
                 //TVcam.transparencySortMode = TransparencySortMode.Default;
-                //Debug.Log("FS: found camera ");
+                Log.dbg("FS: found camera ");
             }            
         }
 

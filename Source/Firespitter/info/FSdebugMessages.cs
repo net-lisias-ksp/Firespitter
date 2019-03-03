@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 namespace Firespitter.info
 {
+    // TODO: Move this feature to KSPe!
     public class FSdebugMessages : MonoBehaviour
     {
         public bool debugMode = true;
@@ -38,11 +41,6 @@ namespace Firespitter.info
             debugMode = _debugMode;
             outputMode = _outputMode;
             postToScreenDuration = _postToScreenDuration;
-        }
-
-        public void Log(string input)
-        {
-            debugMessage(input);
         }
 
         public void debugMessage(object input) // fully automatic mode, posts to screen or or log depending on general setting
@@ -95,7 +93,7 @@ namespace Firespitter.info
         {
             if (postToLog)
             {
-                Debug.Log(moduleName + input);
+                Log.info("{0} {1}", moduleName, input);
             }
             if (postToScreenDuration > 0f) // will only work in the flight scene, gives an error in other places.
             {
@@ -126,7 +124,7 @@ namespace Firespitter.info
         {
             if (postToLog)
             {
-                Debug.Log(input);
+                Log.info(input);
             }
             if (postToScreenDuration > 0f && HighLogic.LoadedSceneIsFlight) // will only work in the flight scene, gives an error in other places.
             {

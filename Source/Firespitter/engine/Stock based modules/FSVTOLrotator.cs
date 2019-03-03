@@ -228,7 +228,7 @@ namespace Firespitter.engine
             if (popupWindowID == 0)
             {
                 popupWindowID = FSGUIwindowID.getNextID();
-                //Debug.Log("Assigned window ID: " + popupWindowID);
+                Log.dbg("Assigned window ID: {0}", popupWindowID);
             }
 
             partTransform = part.FindModelTransform(targetPartObject);
@@ -564,7 +564,7 @@ namespace Firespitter.engine
                 if (Vector3.Dot(partTransform.position.normalized, vessel.ReferenceTransform.right) < 0) // below 0 means the engine is on the left side of the craft
                 {
                     invertRotation = true;
-                    //Debug.Log("Inverting left side VTOL rotation");
+                    Log.dbg("Inverting left side VTOL rotation");
                 }
                 else
                 {
@@ -585,12 +585,12 @@ namespace Firespitter.engine
                 Vector3 relativePosition = CoMTransform.InverseTransformPoint(part.transform.position);
                 if (relativePosition.y < 0)
                 {
-                    //Debug.Log("FSVTOLrotator: Engine is behind CoM: " + relativePosition);
+                    Log.dbg("FSVTOLrotator: Engine is behind CoM: {0}", relativePosition);
                     isInFrontOfCoM = false;
                 }
                 else
                 {
-                    //Debug.Log("FSVTOLrotator: Engine is in front of CoM: " + relativePosition);
+                    Log.dbg("FSVTOLrotator: Engine is in front of CoM: {0}", relativePosition);
                     isInFrontOfCoM = true;
                 }
             }

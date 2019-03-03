@@ -65,7 +65,7 @@ namespace Firespitter.cockpit
             linePos = 16 - linePos - 1;
             charPos++;
 
-            //Debug.Log("In: " + input + " : " + linePos + " / " + charPos);
+            Log.dbg("In: {0} : {1} / {2}", input, linePos, charPos);
 
             return new Vector2((float)charPos, (float)linePos);
         }
@@ -122,7 +122,7 @@ namespace Firespitter.cockpit
                 Transform baseCharPlateTransform = base.internalProp.FindModelTransform(charPlateObject);
                 //baseCharPlateTransform.GetComponent<MeshRenderer>().enabled = false;           
             }
-            else Debug.Log("FSmonitorScript: no char plate");
+            else Log.info("FSmonitorScript: no char plate");
 
             textArray = new string[linesPerPage];
             oldTextArray = new string[linesPerPage];
@@ -143,13 +143,13 @@ namespace Firespitter.cockpit
             // Run once. (Must be run after all parts have been created, so it can't be in the OnAwake)
             if (!monitorDefaultStateSet)
             {
-                //Debug.Log("initializing monitors"); // -------------------------------------------------<<<<<<<<
+                Log.dbg("initializing monitors"); // -------------------------------------------------<<<<<<<<
                 fsMon = new FSmonitorInterface[20];
                 fsMon = base.transform.parent.GetComponentsInChildren<FSmonitorInterface>();
-                //Debug.Log("found " + fsMon.Length + " monitors");
+                Log.dbg("found {0} monitors", fsMon.Length);
                 for (int i = 0; i < fsMon.Length; i++)
                 {
-                    //Debug.Log("setting monitor " + i);
+                    Log.dbg("setting monitor {0}", i);
                     if (i < monitorStartState.Length && useCustomStartStates)
                     {
                         fsMon[i].startState = monitorStartState[i];

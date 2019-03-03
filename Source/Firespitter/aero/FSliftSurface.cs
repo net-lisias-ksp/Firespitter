@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class FSliftSurface : PartModule, ILiftProvider
 {
     [KSPField]
@@ -129,7 +131,7 @@ class FSliftSurface : PartModule, ILiftProvider
 
         if (liftTransform == null)
         {
-            Debug.Log("FSliftSurface: Can't find lift transform " + liftTransformName);
+            Log.info("FSliftSurface: Can't find lift transform {0}", liftTransformName);
         }
         //if (moduleID == 0)
         //{

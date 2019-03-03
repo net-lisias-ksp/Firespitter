@@ -60,8 +60,8 @@ public class FSmoveCraftAtLaunch : PartModule
     [KSPEvent(guiActive = true, guiName = "Log position")]
     public void logPositionEvent()
     {
-        //Debug.Log("FSmoveCAL: part posistion is " + part.transform.position);
-        Debug.Log("Coordinates: lat " + vessel.latitude + ", long " + vessel.longitude + ", alt " + vessel.altitude);
+        Log.dbg("FSmoveCAL: part posistion is {0}", part.transform.position);
+        Log.log("Coordinates: lat {0}, long {1}, alt {2}", vessel.latitude, vessel.longitude, vessel.altitude);
     }
 
     [KSPEvent(guiActive = true, guiName = "Save position")]
@@ -121,14 +121,15 @@ public class FSmoveCraftAtLaunch : PartModule
         StreamReader stream = KSPe.IO.Data.StreamReader.CreateForType<CategoryFilter>(fileName);
         try
         {
-            Debug.Log("Reading position file: " + fileName);                               
+            Log.info("Reading position file: {0}", fileName);                               
             float.TryParse(stream.ReadLine(), out latitude);
             float.TryParse(stream.ReadLine(), out longitude);
             float.TryParse(stream.ReadLine(), out altitude);
         }
         catch (Exception e)
         {            
-            Debug.Log("Exception when reading position file: " + e.ToString());
+            Log.err("Exception when reading position file {0} ", fileName);
+            Log.ex(this, e);
         }        
     }
 
@@ -160,8 +161,9 @@ public class FSmoveCraftAtLaunch : PartModule
             popup.useInActionEditor = false;
             popup.useInFlight = true;
         }
-
-        files = KSPe.IO.File<CategoryFilter>.Data.List("*.pos");
+        
+        if (HighLogic.LoadedSceneIsEditor)
+            this.reloadPositionFiles();
     }
 
     public void cancelSave()
@@ -184,7 +186,7 @@ public class FSmoveCraftAtLaunch : PartModule
     {
 		if (null == vessel) return;
 
-		//Debug.Log("FSmoveCAL: moving vessel to: " + this.positionDisplayName);
+		Log.info("FSmoveCAL: moving vessel to: {0}", this.positionDisplayName);
 		vessel.SetPosition(calculateLaunchPosition(), true);
 		if (!vessel.GetComponent<Rigidbody>().isKinematic)
 		{
@@ -214,7 +216,7 @@ public class FSmoveCraftAtLaunch : PartModule
         if (!HighLogic.LoadedSceneIsFlight || !vessel.isActiveVessel) return;
         
         {
-            //Debug.Log("FSmoveCraftAtLaunch: Launching vessel at " + positionDisplayName + ", lat " + latitude + ", long " + longitude + ", alt " + altitude);
+            Log.dbg("FSmoveCraftAtLaunch: Launching vessel at {0}, lat {1}, long {2}, alt {3}", positionDisplayName, latitude, longitude, altitude);
             // --------- TEMP DISABLING ----------
             //ScreenMessages.PostScreenMessage(new ScreenMessage("The water launch module is disabled in KSP 0.22 due to a bug", 10f, ScreenMessageStyle.UPPER_CENTER));
             //hasLaunched = true;
@@ -245,4 +247,9 @@ public class FSmoveCraftAtLaunch : PartModule
     //{
     //        popup.popup();
     //}
+    
+    private void reloadPositionFiles()
+    {
+        files = KSPe.IO.File<CategoryFilter>.Data.List("*.pos");
+    }
 }

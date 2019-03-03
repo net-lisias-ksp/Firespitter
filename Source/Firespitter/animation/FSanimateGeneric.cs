@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 public class FSanimateGeneric : PartModule
 {
     [KSPField]
@@ -122,7 +124,7 @@ public class FSanimateGeneric : PartModule
             if (startRetractEffect != string.Empty)
             {
                 part.Effect(startRetractEffect);
-                Debug.Log("start retract effect");
+                Log.info("start retract effect");
             }
             rampDirection = RampDirection.down;
         }
@@ -139,7 +141,7 @@ public class FSanimateGeneric : PartModule
             if (anim[animationName].normalizedTime == 0f || anim[animationName].normalizedTime == 1f)
             {
                 anim[animationName].normalizedTime = 0f;
-                Debug.Log("normalizedTime 2 ");
+                Log.info("normalizedTime 2 ");
 
             }
 
@@ -148,7 +150,7 @@ public class FSanimateGeneric : PartModule
             if (startDeployEffect != string.Empty)
             {
                 part.Effect(startDeployEffect);
-                Debug.Log("start deploy effect");
+                Log.info("start deploy effect");
             }
             rampDirection = RampDirection.up;
         }
@@ -325,7 +327,7 @@ public class FSanimateGeneric : PartModule
                 else
                     anim[animationName].speed = unstartedSpeed;
             }
-            // Debug.Log("rampDirection: " + rampDirection.ToString() + "   animSpeed: " + animSpeed.ToString() + "   startAnimSpeed: " + startAnimSpeed.ToString() + "   anim[animationName].speed: " + anim[animationName].speed.ToString());
+            Log.dbg("rampDirection: {0}   animSpeed: {1}   startAnimSpeed: {2}   anim[animationName].speed: {3}", rampDirection, animSpeed, startAnimSpeed, anim[animationName].speed);
             // I don't think that this causes a problem, to call it every time here even if the speed didn't change.  Also catches any other
             // changes
             //if ((rampDirection == RampDirection.down && anim[animationName].speed > -1) ||  rampDirection == RampDirection.up && anim[animationName].speed < 1 - ramp))

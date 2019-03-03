@@ -131,7 +131,7 @@ namespace Firespitter.engine
         {
             engineIgnited = true;
             //staged = true;
-            Debug.Log("igniting engine");
+            Log.dbg("igniting engine");
         }
 
         [KSPEvent(guiName = "Deactivate Engine", guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f)]
@@ -206,7 +206,7 @@ namespace Firespitter.engine
             if (airDirection < 0f) // && collective <= 0f)
             {
                 RPM -= airSpeedThroughRotor * autoRotationGain * (TimeWarp.deltaTime * 50f);
-                //Debug.Log("adding rpm: " + -airSpeedThroughRotor * autoRotationGain);
+                Log.dbg("adding rpm: {0}", -airSpeedThroughRotor * autoRotationGain);
             }
 
             if (airDirection > 0f)
@@ -352,19 +352,19 @@ namespace Firespitter.engine
 
                     if (vessel.verticalSpeed * partFacingUp < maxClimb)
                     {
-                        //Debug.Log("go up");
+                        Log.dbg("go up");
                         hoverCollective = collectivePitch;
                         longTermHoverCollective = Mathf.Lerp(longTermHoverCollective, collectivePitch, 0.01f);
                     }
                     else if (vessel.verticalSpeed * partFacingUp > maxClimb)
                     {
-                        //Debug.Log("go down");
+                        Log.dbg("go down");
                         hoverCollective = -collectivePitch;
                         longTermHoverCollective = Mathf.Lerp(longTermHoverCollective, -collectivePitch, 0.01f);
                     }
                     else
                     {
-                        //Debug.Log("go nowhere");
+                        Log.dbg("go nowhere");
                         hoverCollective = 0f;
                         longTermHoverCollective = Mathf.Lerp(longTermHoverCollective, 0f, 0.01f);
                     }
@@ -372,7 +372,7 @@ namespace Firespitter.engine
                     //hoverCollective = Mathf.Lerp(hoverCollective, Mathf.Sign(-airSpeedThroughRotor) * collectivePitch, 0.1f);
                     //collective = Mathf.Sign(-airSpeedThroughRotor) * collectivePitch;                
 
-                    //Debug.Log(" as " + Math.Round(airSpeedThroughRotor, 2) + " maxClimb " +  Math.Round(maxClimb, 2) + " hoverHeight " +  (int)hoverHeight + " offset " + heightOffset);
+                    Log.dbg(" as {0} maxClimb {1} hoverHeight {2} offset {3}", Math.Round(airSpeedThroughRotor, 2), Math.Round(maxClimb, 2), (int)hoverHeight, heightOffset);
                 }
                 else
                 {

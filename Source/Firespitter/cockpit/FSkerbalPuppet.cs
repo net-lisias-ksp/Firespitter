@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+using Log = Firespitter.Log;
+
 public class FSkerbalPuppet : PartModule
 {
     [KSPField]
@@ -118,7 +120,7 @@ public class FSkerbalPuppet : PartModule
                 if (seatStatus != oldSeatStatus)
                     doUpdate = true;
                 oldSeatStatus = seatStatus;
-                //Debug.Log("seat occupied: " + checkSeatOccupied());
+                Log.dbg("seat occupied: ", checkSeatOccupied());
             }            
             updatePuppetActive();
         }

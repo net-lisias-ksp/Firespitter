@@ -63,7 +63,7 @@ namespace Firespitter.engine
         {
             animTime = Mathf.Lerp(anim[animationName].normalizedTime, targetTime, currentResponseSpeed);
             anim[animationName].normalizedTime = animTime;
-            //Debug.Log("animTime = " + animTime + ", normTime = " + anim[animationName].normalizedTime);
+            Log.dbg("animTime = {0}, normTime = {1}", animTime, anim[animationName].normalizedTime);
         }
 
         private float calculateTargetTime()
@@ -93,7 +93,7 @@ namespace Firespitter.engine
             }
             else
             {
-                Debug.Log("FSanimateThrottle: no animation found called " + animationName);
+                Log.info("FSanimateThrottle: no animation found called {0}", animationName);
             }
         }
 

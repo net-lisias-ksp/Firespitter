@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using Log = Firespitter.Log;
+
 public class FSrudder : PartModule
 {
     [KSPField]
@@ -33,7 +35,7 @@ public class FSrudder : PartModule
     public void increasePower()
     {
         power += 0.01f;        
-        Debug.Log("FSrudder power: " + power);
+        Log.info("FSrudder power: {0}", power);
     }
 
     [KSPEvent(name = "DecreasePower", active = true, guiActive = false, guiName = "Decrease Power")]
@@ -41,7 +43,7 @@ public class FSrudder : PartModule
     {
         power -= 0.01f;
         if (power < 0f) power = 0f;
-        Debug.Log("FSrudder power: " + power);
+        Log.info("FSrudder power: {0}", power);
     }
 
     [KSPEvent(name = "IncreaseRange", active = true, guiActive = false, guiName = "Increase Range")]
@@ -49,7 +51,7 @@ public class FSrudder : PartModule
     {
         range += 1f;
         if (range > 60f) range = 60f;
-        Debug.Log("FSrudder range: " + range);
+        Log.info("FSrudder range: {0}", range);
     }
 
     [KSPEvent(name = "DecreaseRange", active = true, guiActive = false, guiName = "Decrease Range")]
@@ -57,7 +59,7 @@ public class FSrudder : PartModule
     {
         range -= 1f;
         if (range < 0f) range = 0f;
-        Debug.Log("FSrudder range: " + range);
+        Log.info("FSrudder range: {0}", range);
     }
 
     [KSPEvent(name = "CycleForceAxis", active = true, guiActive = false, guiName = "Cycle Force Axis")]
@@ -85,7 +87,7 @@ public class FSrudder : PartModule
                 break;
         }
         
-        Debug.Log("FSrudder forceAxis: " + forceAxis);
+        Log.info("FSrudder forceAxis: {0}", forceAxis);
     }
 
     [KSPEvent(name = "ToggleRequiresWaterContact", active = true, guiActive = false, guiName = "Toggle Req. Water Contact")]
@@ -94,7 +96,7 @@ public class FSrudder : PartModule
         if (requiresWaterContact == 0)
             requiresWaterContact = 1;
         else requiresWaterContact = 0;
-        Debug.Log("FSrudder req. water contact: " + requiresWaterContact);
+        Log.info("FSrudder req. water contact: {0}", requiresWaterContact);
     }
 
     [KSPAction("Toggle Debug Mode")]

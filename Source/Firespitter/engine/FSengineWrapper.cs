@@ -40,7 +40,7 @@ namespace Firespitter.engine
                     }
                 }
             }
-            //Debug.Log("FSengineWrapper: engine type is " + type.ToString());
+            Log.dbg("FSengineWrapper: engine type is ", type);
         }
 
         public FSengineWrapper(Part part, string name)
@@ -48,7 +48,7 @@ namespace Firespitter.engine
             engineFX = part.Modules.OfType<ModuleEnginesFX>().Where(p => p.engineID == name).FirstOrDefault();
             if (engineFX != null)
                 type = EngineType.ModuleEngineFX;
-            //Debug.Log("FSengineWrapper: engine type is " + type.ToString());
+            Log.dbg("FSengineWrapper: engine type is {0}", type);
             
         }
 

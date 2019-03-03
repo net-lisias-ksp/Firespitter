@@ -20,7 +20,7 @@ namespace Firespitter
                 float angle = angleIncrement * i; //angle from 0 to 2PI
                 vertices[i] = new Vector3((float)Math.Cos(angle) * radius,
                                           (float)Math.Sin(angle) * radius, 0f);
-                //Debug.Log("vert " + i + " : " + vertices[i]);
+                Log.dbg("vert {0} : {1}", i, vertices[i]);
             }
 
             //create triangles (three indices per face)
@@ -31,14 +31,14 @@ namespace Firespitter
             {
                 if (i < sides - 1)
                 {
-                    //Debug.Log("i == " + i + " / tri: 0, " + (i + 1) + ", " + (i + 2));
+                    Log.dbg("i == {0} / tri: 0, {1}, {2}", i, (i + 1), (i + 2));
                     triangles[3 * i + 0] = 0; //first corner is always the top
                     triangles[3 * i + 1] = i + 1;
                     triangles[3 * i + 2] = i + 2;
                 }
                 else
                 {
-                    //Debug.Log("i == " + i + " / tri: 0, " + (i + 1) + ", " + 1);
+                    Log.dbg("i == {0} / tri: 0, {1}, {2}", i, (i + 1), 1);
                     triangles[3 * i + 0] = 0; //first corner is always the top
                     triangles[3 * i + 1] = i + 1;
                     triangles[3 * i + 2] = 1;

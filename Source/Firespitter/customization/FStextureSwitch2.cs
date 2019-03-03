@@ -82,7 +82,7 @@ namespace Firespitter.customization
             List<Transform> childList = ListChildren(part.transform);
             foreach (Transform t in childList)
             {
-                Debug.Log("object: " + t.name);
+                Log.info("object: {0}", t.name);
             }
         }
 

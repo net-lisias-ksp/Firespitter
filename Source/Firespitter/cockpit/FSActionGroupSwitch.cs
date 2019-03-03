@@ -103,7 +103,7 @@ namespace Firespitter.cockpit
             }
 
 
-            //Debug.Log("FS switch " + buttonNumber + " clicked");
+            //Log.dbg("FS switch {0} clicked", buttonNumber);
             if (!customAction)
             {
                 FlightGlobals.ActiveVessel.ActionGroups.ToggleGroup(actionGroup);
@@ -128,7 +128,7 @@ namespace Firespitter.cockpit
                                 copterEngine.toggleHover();
                                 if (postMessagesToScreen == 1)
                                     ScreenMessages.PostScreenMessage(new ScreenMessage("hover height set to " + Math.Round(copterEngine.hoverHeight, 1), 2f, ScreenMessageStyle.UPPER_CENTER));
-                                Debug.Log("FS: hover height set to " + copterEngine.hoverHeight);
+                                Log.info("FS: hover height set to {0}", copterEngine.hoverHeight);
                             }
 
                             IEnumerable<engine.FSengineBladed> bladedEngines = part.Modules.OfType<engine.FSengineBladed>();

@@ -71,19 +71,19 @@ namespace Firespitter.info
             guideLine = part.gameObject.GetComponent<LineRenderer>();
             if (guideLine != null)
             {
-                Debug.Log("destroying existing linerenderer " + part.GetInstanceID());
+                Log.dbg("destroying existing linerenderer {0}", part.GetInstanceID());
                 DestroyImmediate(guideLine);
             }
-            Debug.Log("creating linerenderer" + part.GetInstanceID());
+            Log.info("creating linerenderer {0}", part.GetInstanceID());
             guideLine = part.gameObject.AddComponent<LineRenderer>();
 
-            Debug.Log("setting line properties" + part.GetInstanceID());
+            Log.info("setting line properties {0}", part.GetInstanceID());
             guideLine.SetWidth(0.02f, 0.02f);
             guideLine.material = new Material(Shader.Find("Unlit/Texture"));
             guideLine.material.SetTexture("_MainTex", guideLineTexCorrect);
             guideLine.SetVertexCount(5);
             guideLine.useWorldSpace = true;
-            Debug.Log("create line done" + part.GetInstanceID());
+            Log.info("create line done {0}", part.GetInstanceID());
         }
 
         private void Update()

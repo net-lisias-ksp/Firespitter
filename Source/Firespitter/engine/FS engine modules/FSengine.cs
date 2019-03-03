@@ -345,8 +345,8 @@ namespace Firespitter.engine
             }
             catch (Exception e)
             {
-                if (debugMode)
-                    Debug.Log("FSengineBladed GetVelocity Exception " + e.GetType().ToString());
+                Log.err("FSengineBladed GetVelocity Exception!");
+                Log.ex(this, e);
             }
             return newVelocity;
         }
@@ -390,7 +390,7 @@ namespace Firespitter.engine
                     
                         double fuelReceived = part.RequestResource(resourceList[i].ID, requestFuelAmount);
                         //debug.debugMessage("fuel received: " + fuelReceived + " of " + requestFuelAmount);
-                        //Debug.Log("fR/rFA: " + fuelReceived / requestFuelAmount + " - clamped: " + Tools.Clamp(fuelReceived / requestFuelAmount, 0d, 1d));
+                        //Log.dbg("fR/rFA: {0} - clamped: {1}", (fuelReceived / requestFuelAmount), Tools.Clamp(fuelReceived / requestFuelAmount, 0d, 1d));
                         resourceList[i].currentSupply = Tools.Clamp(fuelReceived / requestFuelAmount, 0d, 1d);
                         if (resourceList[i].currentSupply < flameoutThreshold)
                         {

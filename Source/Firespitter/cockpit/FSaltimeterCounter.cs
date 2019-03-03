@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class FSaltimeterCounter : InternalModule
 {
     [KSPField]
@@ -42,7 +44,7 @@ class FSaltimeterCounter : InternalModule
             }
             else
             {
-                Debug.Log("FSaltimeterCounter: Could not find dial wheel " + wheelName);
+                Log.info("FSaltimeterCounter: Could not find dial wheel {0}", wheelName);
             }
         }        
     }
@@ -62,7 +64,7 @@ class FSaltimeterCounter : InternalModule
 
         analogCounter.rotationAxis = rotationAxis;
         analogCounter.defaultRotation = defaultRotation;
-        //Debug.Log("altimeter Counter list: " + analogCounter.wheels.Count);
+        Log.dbg("altimeter Counter list: {0}", analogCounter.wheels.Count);
     }
 
     public override void OnUpdate()

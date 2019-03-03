@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+using Firespitter;
 
 public class FSairBrake : PartModule // Inspired by Vlad Just Vlad's airbrake plugin from here http://forum.kerbalspaceprogram.com/showthread.php/13898-Airbrake?
 {
@@ -75,7 +76,7 @@ public class FSairBrake : PartModule // Inspired by Vlad Just Vlad's airbrake pl
             }
             else
             {
-                Debug.Log("FSairBrake: Could not find transform " + targetPartObject + ", disabling brake anim. Drag function still active.");
+                Log.info("FSairBrake: Could not find transform {0}, disabling brake anim. Drag function still active.", targetPartObject);
             }
 
             normalMinDrag = part.minimum_drag;

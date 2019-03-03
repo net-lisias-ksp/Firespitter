@@ -45,7 +45,7 @@ namespace Firespitter.engine
             engine = new FSengineWrapper(part);
             if (engine.type != FSengineWrapper.EngineType.NONE)
             {
-                //Debug.Log("FSswitchEngineThrustTransform: Engine module found");
+                Log.dbg("FSswitchEngineThrustTransform: Engine module found");
                 thrustTransform = part.FindModelTransform(defaultTTName);
                 defaultTT = new GameObject().transform;
                 defaultTT.localPosition = thrustTransform.localPosition;
@@ -79,7 +79,7 @@ namespace Firespitter.engine
             else
             {
                 valid = false;
-                Debug.Log("FSswitchEngineThrustTransform: no engine module found");
+                Log.info("FSswitchEngineThrustTransform: no engine module found");
             }
 
             animateThrottle = part.Modules.OfType<FSanimateThrottle>().FirstOrDefault();
@@ -125,27 +125,27 @@ namespace Firespitter.engine
         {
             try
             {
-                Debug.Log("TT: " + thrustTransform.name);
+                Log.info("TT: {0}", thrustTransform.name);
             }
             catch
             {
-                Debug.Log("TT: error");
+                Log.err("TT: error");
             }
             try
             {
-                Debug.Log("defaultTT: " + defaultTT.name);
+                Log.info("defaultTT: {0}", defaultTT.name);
             }
             catch
             {
-                Debug.Log("defaultTT: error");
+                Log.err("defaultTT: error");
             }
             try
             {
-                Debug.Log("altTT: " + alternateTT.name);
+                Log.info("altTT: {0}", alternateTT.name);
             }
             catch
             {
-                Debug.Log("altTT: error");
+                Log.err("altTT: error");
             }
         }
 
@@ -179,7 +179,7 @@ namespace Firespitter.engine
             }
             else
             {
-                Debug.Log("FSswitchEngineThrustTransform: invalid setup");
+                Log.info("FSswitchEngineThrustTransform: invalid setup");
             }
 
         }

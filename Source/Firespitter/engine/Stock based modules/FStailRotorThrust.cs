@@ -123,7 +123,7 @@ namespace Firespitter.engine
             }
             else
             {
-                Debug.Log("FSrotorTrim: Could not find partTransform '" + thrustTransform + "', disabling module");
+                Log.info("FSrotorTrim: Could not find partTransform '{0}', disabling module", thrustTransform);
             }
         }
 
@@ -145,7 +145,7 @@ namespace Firespitter.engine
                 }
 
                 //bool inputReceived = steeringInput.y != 0f;
-                //Debug.Log("Force: " + steeringInput.y);
+                Log.dbg("Force: {0}", steeringInput.y);
 
                 if (invertInput) steeringInput *= -1; // if the part is upside down, you can toggle inverse controls for it.            
 

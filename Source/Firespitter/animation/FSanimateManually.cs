@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using Log = Firespitter.Log;
+
 public class FSanimateManually : PartModule
 {
     [KSPField]
@@ -38,28 +40,28 @@ public class FSanimateManually : PartModule
         endTransformInverted = part.FindModelTransform(targetObject + "EndInverted");
         if (!objectTransform)
         {
-            Debug.LogWarning("FSanimateManually: No such object, " + targetObject);
+            Log.warn("FSanimateManually: No such object, {0}", targetObject);
             objectExists = false;
         }
         else
         {
-            //Debug.Log("FSanimateManually: Found object " + targetObject);
+            Log.dbg("FSanimateManually: Found object {0}", targetObject);
             originalTransform.localPosition = objectTransform.localPosition;
             originalTransform.localRotation = objectTransform.localRotation;
             //originalTransform = objectTransform;
             objectExists = true;
         }
 
-        //Debug.Log("FSanimateManually: looking for anim");
+        Log.dbg("FSanimateManually: looking for anim");
         anim = part.GetComponentInChildren<Animation>();
         if (anim != null)
         {            
-            //Debug.Log("FSanimateManually: Found anim ");// + animationName + " / " + anim.name);
+            Log.dbg("FSanimateManually: Found anim {0} / {1}", animationName, anim.name);
             animationExists = true;
         }
         else
         {
-            Debug.LogWarning("FSanimateManually: no animation, ");
+            Log.warn("FSanimateManually: no animation. ");
         }
         //set the rotation based on flip when in the VAB/SPH, or at launch  
         // NOPE, can't run the update code in the sph, because there is no vessel object yet, so no finding left/right
@@ -76,7 +78,7 @@ public class FSanimateManually : PartModule
             if (Vector3.Dot(objectTransform.position.normalized, vessel.ReferenceTransform.right) < 0) // below 0 means the engine is on the left side of the craft
             {
                 invertMotion = true;
-               // Debug.Log("FSanimateManually: Inverting left side Gear");
+                Log.dbg("FSanimateManually: Inverting left side Gear");
             }
            invertSet = true;
         }
@@ -112,7 +114,7 @@ public class FSanimateManually : PartModule
         }
         else
         {
-            Debug.LogWarning("FSanimateManually: Error, missing object " + targetObject + ": " + objectExists + " / missing animation " + animationName + ": " + animationExists);
+            Log.warn("FSanimateManually: Error, missing object {0}: {1} / missing animation {2}: {3}" + targetObject, objectExists, animationName, animationExists);
         }
     }
 }

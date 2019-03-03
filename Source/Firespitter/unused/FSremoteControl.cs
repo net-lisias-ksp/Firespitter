@@ -34,7 +34,7 @@ public class FSremoteControl : PartModule //This is just a testing class for var
             target.ctrlState.pitch = vessel.ctrlState.X;
             target.ctrlState.roll = vessel.ctrlState.Z;
             //Vessel targetVessel = (Vessel)target;
-            //Debug.Log(target);
+            Log.dbg(target);
             BaseFieldList test = this.part.Fields;
             foreach (BaseField field in test)
             {
@@ -65,12 +65,12 @@ public class FSremoteControl : PartModule //This is just a testing class for var
             Camera.main.clearFlags = CameraClearFlags.Depth;
             Camera.main.backgroundColor = new Color(0f,0f,0f,0.02f);  
             
-            /*Debug.Log("fs: rsFog " + RenderSettings.fog);
-            Debug.Log("fs: fogC " + RenderSettings.fogColor);
-            Debug.Log("fs: fDens " + RenderSettings.fogDensity);
-            Debug.Log("fs: fMode" + RenderSettings.fogMode);
-            Debug.Log("fs: camCF" + Camera.main.clearFlags);
-            Debug.Log("fs: camBGc" + Camera.main.backgroundColor);*/
+            Log.dbg("rsFog {0}", RenderSettings.fog);
+            Log.dbg("fogC {0}", RenderSettings.fogColor);
+            Log.dbg("fDens {0}", RenderSettings.fogDensity);
+            Log.dbg("fMode {0}", RenderSettings.fogMode);
+            Log.dbg("camCF {0}", Camera.main.clearFlags);
+            Log.dbg("camBGc {0}", Camera.main.backgroundColor);
         }
     }
 }

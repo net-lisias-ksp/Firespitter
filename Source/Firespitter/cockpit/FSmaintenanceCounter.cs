@@ -71,7 +71,7 @@ public class FSmaintenanceCounter : InternalModule
         flightTimeCounterMin.defaultRotation = defaultRotation;
         cycleCounter.rotationAxis = rotationAxis;
         cycleCounter.defaultRotation = defaultRotation;
-        //Debug.Log("altimeter Counter list: " + analogCounter.wheels.Count);
+        //Log.dbg("altimeter Counter list: {0}", analogCounter.wheels.Count);
 
         maintenanceInfo = part.Modules.OfType<FSmaintenanceInfo>().FirstOrDefault();
         if (maintenanceInfo != null)

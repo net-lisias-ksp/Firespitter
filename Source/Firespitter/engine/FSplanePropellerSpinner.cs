@@ -147,14 +147,14 @@ namespace Firespitter.engine
                             }
                             catch
                             {
-                                Debug.Log("FSplanePropellerSpinner: Unable to find blade called " + bladeNames[i] + ", disabling swap");
+                                Log.info("FSplanePropellerSpinner: Unable to find blade called {0}, disabling swap", bladeNames[i]);
                                 useRotorDiscSwap = 0;
                             }
                         }
                     }
                     else
                     {
-                        Debug.Log("FSplanePropellerSpinner: Unable to find rotor disc " + rotorDiscName + ", disabling swap");
+                        Log.info("FSplanePropellerSpinner: Unable to find rotor disc {0}, disabling swap", rotorDiscName);
                         useRotorDiscSwap = 0;
                     } 
                 }
@@ -190,7 +190,7 @@ namespace Firespitter.engine
                 {
                     rotationSpeed = engine.fsengine.maxRPM;
                     currentRPM = engine.fsengine.RPM / engine.fsengine.maxRPM;
-                    //Debug.Log("Fsengine found");
+                    Log.dbg("Fsengine found");
                 }
                 else
                 {
@@ -211,7 +211,7 @@ namespace Firespitter.engine
 
                 if (currentRPM != 0f)
                 {
-                    //Debug.Log("RPM not 0, prop null: " + (propeller == null) + ", disc null: " + (rotorDisc == null));
+                    Log.dbg("RPM not 0, prop null: {0}, disc null: {1}", (propeller == null), (rotorDisc == null));
 
                     float finalRotationSpeed = rotationSpeed;
                     if (thrustRPM != 0f)

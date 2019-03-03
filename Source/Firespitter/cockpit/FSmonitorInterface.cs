@@ -134,7 +134,7 @@ namespace Firespitter.cockpit
 
         public void buttonClick(int buttonNumber)
         {
-            //Debug.Log("FS button " + buttonNumber + " clicked");
+            Log.dbg("FS button {0} clicked", buttonNumber);
             buttonArray[buttonNumber] = true;
             if (!targetScript.arrayCreated)
             {

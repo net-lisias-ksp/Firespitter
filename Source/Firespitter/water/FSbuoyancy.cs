@@ -34,14 +34,14 @@ public class FSbuoyancy : PartModule
     //public void increaseBuoyancyEvent()
     //{
     //    buoyancyForce += buoyancyIncrements;
-    //    Debug.Log("buoyancy: " + buoyancyForce);
+    //    Log.info("buoyancy: {0}", buoyancyForce);
     //}
 
     //[KSPEvent(guiActive = false, guiName = "decrease buoyancy")]
     //public void decreaseBuoyancyEvent()
     //{
     //    buoyancyForce -= buoyancyIncrements;
-    //    Debug.Log("buoyancy: " + buoyancyForce);
+    //    Log.info("buoyancy: {0}", buoyancyForce);
     //}
 
     public override void OnStart(PartModule.StartState state)

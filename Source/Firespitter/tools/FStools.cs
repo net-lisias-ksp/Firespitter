@@ -76,7 +76,7 @@ namespace Firespitter
                 }
                 else
                 {
-                    Debug.Log("invalid integer: " + valueArray[i]);
+                    Log.info("invalid integer: {0}", valueArray[i]);
                 }
             }
             return newIntList;
@@ -96,7 +96,7 @@ namespace Firespitter
                 }
                 else
                 {
-                    Debug.Log("invalid float: " + array[i]);
+                    Log.info("invalid float: {0}", array[i]);
                 }
             }
             return list;
@@ -115,7 +115,7 @@ namespace Firespitter
                 }
                 else
                 {
-                    Debug.Log("FStools: invalid float: [len:" + array[i].Length + "] '" + array[i]+ "']");
+                    Log.info("FStools: invalid float: [len:{0}] '{1}']", array[i].Length, array[i]);
                 }
             }
             return list;
@@ -196,7 +196,7 @@ namespace Firespitter
                         goto foundField;
                     }
                 }
-                Debug.LogWarning("*PartUtils* Unable to find UIPartActionWindow list");
+                Log.warn("*PartUtils* Unable to find UIPartActionWindow list");
                 return null;
             }
         foundField:

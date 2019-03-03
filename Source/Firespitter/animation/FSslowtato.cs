@@ -63,7 +63,7 @@ namespace Firespitter.animation
             rotator = part.FindModelTransform(rotatorName);
             if (rotator == null)
             {
-                Debug.Log("Could not find transform " + rotatorName);
+                Log.info("Could not find transform {0}", rotatorName);
             }
             else
             {

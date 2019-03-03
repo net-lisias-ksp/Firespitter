@@ -22,7 +22,7 @@ class transformTest : PartModule
         {            
                 particleFX = new Firespitter.FSparticleFX(part.gameObject, particleTexture);
                 particleFX.EmitterLocalVelocity = EmitterLocalVelocity;
-                //Debug.Log("KTvelocityController: particle texture found: " + particleTextureName);
+                Log.dbg("KTvelocityController: particle texture found: {0}", particleTextureName);
                 particleFX.setupFXValues();
                 //particleFX.pEmitter.minEmission = 0f;
                 //particleFX.pEmitter.maxEmission = 0f;
@@ -41,12 +41,12 @@ class transformTest : PartModule
         
         //particleFX.pEmitter.worldVelocity = vessel.ReferenceTransform.up * 5f;
         
-        //Debug.Log("vessel forward: " + vessel.ReferenceTransform.up); //forward is down, up is forward
+        Log.dbg("vessel forward: {0}", vessel.ReferenceTransform.up); //forward is down, up is forward
 
         Vector3 worldUp = Firespitter.Tools.WorldUp(vessel);
         refTransform.position = vessel.ReferenceTransform.position; // part.transform.position;
         refTransform.rotation = Quaternion.LookRotation(vessel.ReferenceTransform.up, -vessel.ReferenceTransform.forward);
-        //Debug.Log("vessel up dot worldUp: " + Vector3.Dot(refTransform.up, worldUp));
+        Log.info("vessel up dot worldUp: {0}", Vector3.Dot(refTransform.up, worldUp));
 
         particleFX.pEmitter.worldVelocity = worldUp * 5f;
     }

@@ -74,7 +74,7 @@ namespace Firespitter.engine
 
         public override void OnStart(PartModule.StartState state)
         {
-            //Debug.Log("KTengineHover OnStart");
+            Log.dbg("KTengineHover OnStart");
             base.OnStart(state);
             if (HighLogic.LoadedSceneIsFlight)
             {
@@ -113,12 +113,12 @@ namespace Firespitter.engine
                     if (newThrust <= minThrust) newThrust = minThrust + 0.001f;
                     if (engine != null)
                     {
-                        //Debug.Log("newThrust is " + newThrust);
+                        Log.dbg("newThrust is {0}", newThrust);
                         engine.maxThrust = newThrust;
                     }
                     else
                     {
-                        Debug.Log("engine is null");
+                        Log.dbg("engine is null");
                     }
                 }
             }

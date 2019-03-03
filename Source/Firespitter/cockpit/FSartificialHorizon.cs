@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using Log = Firespitter.Log;
+
 class FSartificialHorizon :InternalModule
 {
     public Transform needle;
@@ -69,13 +71,13 @@ class FSartificialHorizon :InternalModule
         }
         catch
         {
-            Debug.Log("FSartificialHorizon: Can't find object, or its material: " + innerDiscName);
+            Log.err("FSartificialHorizon: Can't find object, or its material: {0}",innerDiscName);
         }
 
         if (discMat == null)
         {
             useOffset = false;
-            Debug.Log("FSartificialHorizon: Couldn't find disc material");
+            Log.info("FSartificialHorizon: Couldn't find disc material");
         }
 
         if (useOffset)
