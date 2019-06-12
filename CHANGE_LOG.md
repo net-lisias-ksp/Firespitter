@@ -1,5 +1,12 @@
 # Firespitter :: Change Log
 
+* 2019-0611 : 7.12.0.1 (Lisias) for KSP >= 1.4.0
+	+ Certified to work up to KSP 1.7.1 with MH and BG
+	+ Applying proposed pull requests to upstream, not approved yet
+		- Adding missing bulkheadProfiles
+		- Making firespitter compatible with Principia and other mods that relies on `Part.AddForcesAtPosition`
+	+ Using KSPe logging facilities 
+	+ Bumping up version to match upstream's
 * 2019-0222 : 7.9.0.2 (Lisias) for KSP >= 1.4.0
 	+ Certified for KSP from 1.4.0 to 1.6.1
 	+ Fixed a dumb mistake on reading positions for the FS3WL Water Launch System 

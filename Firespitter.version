@@ -6,9 +6,9 @@
 	"CHANGE_LOG_URL": "https://raw.githubusercontent.com/net-lisias-kspu/Firespitter/CHANGES.md",
 	"VERSION":{
 		"MAJOR":7,
-		"MINOR":9,
+		"MINOR":12,
 		"PATCH":0,
-		"BUILD":2
+		"BUILD":1
 		},
 	"KSP_VERSION_MIN":{
 		"MAJOR":1,
