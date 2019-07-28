@@ -30,11 +30,11 @@ namespace Firespitter
 			{ 
 				{
 					string fn = KSPe.IO.File<CategoryFilter>.Asset.Solve("Icons/normal.png");
-					unselected.LoadImage(File.ReadAllBytes(fn));
+					unselected = KSPe.Util.Image.Texture2D.LoadFromFile(fn);
 				}
 				{
 					string fn = KSPe.IO.File<CategoryFilter>.Asset.Solve("Icons/selected.png");
-					selected.LoadImage(File.ReadAllBytes(fn));
+					selected = KSPe.Util.Image.Texture2D.LoadFromFile(fn);
 				}
 	            RUI.Icons.Selectable.Icon filterIcon = new RUI.Icons.Selectable.Icon("FS_filter_icon", unselected, selected); //Defining filterIcon
 	
