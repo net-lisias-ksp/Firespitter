@@ -1,17 +1,14 @@
 ﻿/*
 Firespitter /L
 Copyright 2013-2018, Andreas Aakvik Gogstad (Snjo)
-Copyright 2018, LisiasT
+Copyright 2018-2019, LisiasT
 
     Developers: LisiasT
 
     This file is part of Firespitter.
 */
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.IO;
-using System.Text;
 using UnityEngine;
 using KSP.UI.Screens;
 
