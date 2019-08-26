@@ -172,6 +172,7 @@ namespace Firespitter.customization
             }
             if (tweakableUI != null)
             {
+                tweakableUI.CreatePartList(true);
                 tweakableUI.displayDirty = true;
             }
             else

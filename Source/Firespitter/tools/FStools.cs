@@ -176,6 +176,11 @@ namespace Firespitter
         /// </summary>
         public static UIPartActionWindow FindActionWindow(this Part part)
         {
+            return UIPartActionController.Instance.GetItem(part);
+        }
+        #if false
+        // This code was needed once. TODO: For what KSP version? 
+        {
             if (part == null)
                 return null;
 
@@ -207,9 +212,9 @@ namespace Firespitter
 
             return uiPartActionWindows.FirstOrDefault(window => window != null && window.part == part);
         }
-
-        #endregion
+    #endif
     }
+    #endregion
 
     public class MouseEventHandler : MonoBehaviour
     {
