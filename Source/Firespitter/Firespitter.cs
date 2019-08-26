@@ -14,6 +14,15 @@ using KSP.UI.Screens;
 
 namespace Firespitter
 {
+    [KSPAddon(KSPAddon.Startup.Instantly, true)]
+    internal class Startup : MonoBehaviour
+    {
+        private void Start()
+        {
+            Log.info("Version {0}", Version.Text);
+        }
+    }
+
     [KSPAddon(KSPAddon.Startup.MainMenu , true)]
     public class CategoryFilter : MonoBehaviour
     {
