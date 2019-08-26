@@ -1,5 +1,10 @@
 # Firespitter :: Changes
 
+* 2019-0825 : 7.13.0.1 (Lisias) for KSP >= 1.3.1
+	+ Certified to work down to 1.3.1 ! #hurray!
+	+ Applying upstream fixes
+		- Duplicated resource fields on FSSwitch. 
+	+ Fixes from release 7.12.0.1 not approved yet into upstream's.
 * 2019-0611 : 7.12.0.1 (Lisias) for KSP >= 1.4.0
 	+ Certified to work up to KSP 1.7.1 with MH and BG
 	+ Applying proposed pull requests to upstream, not approved yet
