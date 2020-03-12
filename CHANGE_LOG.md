@@ -1,5 +1,9 @@
 # Firespitter :: Change Log
 
+* 2019-0825: 7.13.0 (BobPalmer) for KSP 1.6.x
+	+ (now with the correct zip)
+* 2019-0825: 7.13.0 (BobPalmer) for KSP 1.6.x
+	+ (now with the correct zip)
 * 2019-0301: 7.12.0 (BobPalmer) for KSP 1.5x
 	+ No changelog provided
 * 2019-0301: 7.12.0 (BobPalmer) for KSP 1.5x
