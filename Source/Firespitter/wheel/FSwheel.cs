@@ -1061,7 +1061,9 @@ class FSwheel : PartModule
         part.Effect("touchdown", fxLevel);
         Log.dbg("wheels: {0}, current: {1}", wheelList.wheels.Count, wheelNumber);
         wheelList.wheels[wheelNumber].screechCountdown = 0.5f;
+    #if UNITY_2017
         Log.dbg("Distance {0}", Vector3.Distance(vessel.ReferenceTransform.position, wheelList.wheels[wheelNumber].smokeFX.gameObject.transform.position));
+    #endif
         // TODO play one shot audio                
     }
 

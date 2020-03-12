@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26206.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firespitter", "Source\Firespitter\Firespitter.csproj", "{BFE97E64-BF01-48AF-81EE-6B2610076542}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firespitter-Unity5", "Source\Firespitter\Firespitter-Unity5.csproj", "{BFE97E64-BF01-48AF-81EE-6B2610076542}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
