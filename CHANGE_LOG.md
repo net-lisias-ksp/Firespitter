@@ -1,5 +1,9 @@
 # Firespitter :: Change Log
 
+* 2019-0301: 7.12.0 (BobPalmer) for KSP 1.5x
+	+ No changelog provided
+* 2019-0301: 7.12.0 (BobPalmer) for KSP 1.5x
+	+ No changelog provided
 * 2018-1116: 7.11.0 (BobPalmer) for KSP 1.8.1
 	+ No changelog provided
 * 2018-1116: 7.11.0 (BobPalmer) for KSP 1.8.1
