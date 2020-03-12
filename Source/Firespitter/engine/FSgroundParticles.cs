@@ -56,8 +56,10 @@ namespace Firespitter.engine
         private MeshFilter meshFilter;
 
         // a class which contains mesh emitter, animator and renderer, assigned to a GameObject
+    #if !UNITY_2019
         private FSparticleFX particleFX;
         private Texture2D particleTexture;
+    #endif
 
         void Start()
         {
@@ -70,6 +72,7 @@ namespace Firespitter.engine
             meshFilter = washDisc.AddComponent<MeshFilter>();            
             meshFilter.mesh = MeshCreator.createDisc(emissionDiscSize, 100);
 
+        #if !UNITY_2019
             // fetch the particle texture from KSP's Game Database
             particleTexture = GameDatabase.Instance.GetTexture(particleTextureName, false);            
                                       
@@ -107,6 +110,7 @@ namespace Firespitter.engine
 
                 // Can't turn on Interpolate Triangles on the emitter, casue it's not exposed to code. REALLY?!? WHY?
             }
+        #endif
 
             thrustTransform = part.FindModelTransform(thrustTransformName);
         }
@@ -167,14 +171,17 @@ namespace Firespitter.engine
             }
             currentEmission = Mathf.Clamp(currentEmission, 0f, emission);
 
+        #if !UNITY_2019
             particleFX.pEmitter.minEmission = currentEmission;
             particleFX.pEmitter.maxEmission = currentEmission;
+        #endif
         }
 
         void LateUpdate()
         {
             if (!HighLogic.LoadedSceneIsFlight) return;
 
+        #if !UNITY_2019
             // to change particles you first have to get the array, modify it, then feed the whole thing back to the emitter
             Particle[] particles = particleFX.pEmitter.particles;
 
@@ -196,6 +203,7 @@ namespace Firespitter.engine
 
             // assign the array back to the emitter
             particleFX.pEmitter.particles = particles;
+        #endif
         }
     }
 }

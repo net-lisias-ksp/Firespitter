@@ -34,7 +34,11 @@ namespace Firespitter.engine
         Transform[] transformArray;
         private bool transformsFound = false;
         private Vector3 velocityDirection = new Vector3(0f, 0f, 0f);
+
+    #if !UNITY_2019
         private Firespitter.FSparticleFX[] particleFX;
+    #endif
+
         private Texture2D particleTexture;
         private Vector3 finalThrust = new Vector3(0f, 0f, 0f);
 
@@ -50,7 +54,9 @@ namespace Firespitter.engine
             if (transformArray.Length > 0)
             {
                 transformsFound = true;
+                #if !UNITY_2019
                 particleFX = new Firespitter.FSparticleFX[transformArray.Length];
+                #endif
             }
             else
             {
@@ -64,6 +70,7 @@ namespace Firespitter.engine
                 particleTexture = GameDatabase.Instance.GetTexture(particleTextureName, false);
                 if (particleTexture != null)
                 {
+                #if !UNITY_2019
                     for (int i = 0; i < particleFX.Length; i++)
                     {
                         particleFX[i] = new Firespitter.FSparticleFX(transformArray[i].gameObject, particleTexture);
@@ -74,6 +81,7 @@ namespace Firespitter.engine
                         particleFX[i].pEmitter.maxEmission = 0f;
                         particleFX[i].pEmitter.useWorldSpace = false;
                     }
+                #endif
                 }
                 else
                 {
@@ -111,12 +119,14 @@ namespace Firespitter.engine
                         thrustUsed = 0f;
                     if (thrustUsed > 0f)
                         part.gameObject.GetComponent<Part>().AddForceAtPosition(finalThrust, t.transform.position);
+                #if !UNITY_2019
                     if (useFX)
                     {
                         particleFX[i].pEmitter.minEmission = defaultEmitterMinEmission * thrustUsed;
                         particleFX[i].pEmitter.maxEmission = defaultEmitterMaxEmission * thrustUsed;
                     }
                     i++;
+                #endif
                 }
             }
         }

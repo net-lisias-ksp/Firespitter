@@ -703,6 +703,7 @@ class FSwheel : PartModule
                 }
                 else
                 {
+                    #if !UNITY_2019
                     for (int i = 0; i < wheelList.wheels.Count; i++)
                     {
                         wheelList.wheels[i].smokeFX = new Firespitter.FSparticleFX(wheelList.wheels[i].fxLocation, smokeFXtexture);
@@ -722,6 +723,7 @@ class FSwheel : PartModule
                         
                         wheelList.wheels[i].smokeFX.setupFXValues();
                     }
+                    #endif
                 }
             }
 
@@ -1065,6 +1067,7 @@ class FSwheel : PartModule
 
     private void updateScreechEffect(int wheelNumber)
     {
+        #if !UNITY_2019
         if (wheelList.wheels[wheelNumber].screechCountdown > 0f)
         {
             // emit particles
@@ -1099,6 +1102,7 @@ class FSwheel : PartModule
                 wheelList.wheels[wheelNumber].smokeFX.pEmitter.maxEmission = 0f;
             }
         }
+        #endif
     }
 
     public void OnGUI()

@@ -5,6 +5,7 @@ namespace Firespitter
     public class FSparticleFX
     {                
 
+    #if !UNITY_2019
         public GameObject gameObject;
         public GameObject parentObject;
         public Texture particleTexture;
@@ -103,6 +104,6 @@ namespace Firespitter
                 //pEmitter.maxEmission = pEmitter.minEmission + (velMagnitude * 3);
             }            
         }
-
+    #endif
     }
 }
