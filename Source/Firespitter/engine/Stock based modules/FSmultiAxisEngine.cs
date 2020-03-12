@@ -54,13 +54,13 @@ namespace Firespitter.engine
         private bool usePitch;
         private bool useRoll;
         private bool useYaw;
-        private Transform pitchTransform = new GameObject().transform;
-        private Transform rollTransform = new GameObject().transform;
-        private Transform yawTransform = new GameObject().transform;
-        private Transform gimbalTransform = new GameObject().transform;
-        private Transform pitchGimbalExtreme = new GameObject().transform;
-        private Transform rollGimbalExtreme = new GameObject().transform;
-        private Transform yawGimbalExtreme = new GameObject().transform;
+        private Transform pitchTransform;
+        private Transform rollTransform;
+        private Transform yawTransform;
+        private Transform gimbalTransform;
+        private Transform pitchGimbalExtreme;
+        private Transform rollGimbalExtreme;
+        private Transform yawGimbalExtreme;
 
         private FSengineWrapper engine;
 
@@ -86,6 +86,17 @@ namespace Firespitter.engine
         public void toggleInvertYaw()
         {
             invertYaw = !invertYaw;
+        }
+
+        private void Init()
+        {
+            this.pitchTransform = new GameObject().transform;
+            this.rollTransform = new GameObject().transform;
+            this.yawTransform = new GameObject().transform;
+            this.gimbalTransform = new GameObject().transform;
+            this.pitchGimbalExtreme = new GameObject().transform;
+            this.rollGimbalExtreme = new GameObject().transform;
+            this.yawGimbalExtreme = new GameObject().transform;
         }
 
         private void updateGimbal()
@@ -153,6 +164,12 @@ namespace Firespitter.engine
                 yawTransform.localRotation = Quaternion.Euler((yawResponseAxis * rotation.z) + yawDefaultRotation);
                 //yawTransform.localRotation = Quaternion.Euler(new Vector3(rotation.z, 0, 0) + yawDefaultRotation);
             }
+        }
+
+        new void Awake()
+        {
+            base.Awake();
+            this.Init();
         }
 
         public override void OnStart(PartModule.StartState state)

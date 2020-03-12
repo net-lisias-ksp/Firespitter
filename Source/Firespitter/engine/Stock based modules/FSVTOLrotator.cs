@@ -31,7 +31,7 @@ namespace Firespitter.engine
         private List<float> availableAnglesList = new List<float>
         {
         };
-        Transform partTransform = new GameObject().transform;
+        Transform partTransform;
         private FSpropellerAtmosphericNerf atmosphericNerf = new FSpropellerAtmosphericNerf();
 
         FSGUIPopup popup;
@@ -85,6 +85,12 @@ namespace Firespitter.engine
 
         [KSPField]
         public int steerDirection = 1; // -1 is for inverted steering for silly b9 engines
+
+        private void Init()
+        {
+            this.partTransform = new GameObject().transform;
+        }
+
 
         [KSPEvent(name = "invertVTOLrotation", active = true, guiActive = true, guiName = "invert VTOL rotation", guiActiveUnfocused = true, externalToEVAOnly = true, unfocusedRange = 4f)]
         public void toggleInvertRotation()
@@ -527,6 +533,12 @@ namespace Firespitter.engine
                     }
                 }
             }
+        }
+
+        new void Awake()
+        {
+            base.Awake();
+            this.Init();
         }
 
         public void FixedUpdate() // moved angle update to fixed update to make rotation speed indpendent of framerate

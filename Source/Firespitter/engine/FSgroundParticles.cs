@@ -19,7 +19,7 @@ namespace Firespitter.engine
         private FSengineWrapper engine;
 
         // a disc mesh will be created at runtime. Particles spawn inside this mesh on the ground
-        private GameObject washDisc = new GameObject();        
+        private GameObject washDisc;
 
         // how far off the ground you can be and still spawn dust particles
         [KSPField]
@@ -60,6 +60,17 @@ namespace Firespitter.engine
         private FSparticleFX particleFX;
         private Texture2D particleTexture;
     #endif
+
+        private void Init()
+        {
+            this.washDisc = new GameObject();
+        }
+
+        new void Awake()
+        {
+            base.Awake();
+            this.Init();
+        }
 
         void Start()
         {
