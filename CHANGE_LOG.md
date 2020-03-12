@@ -1,5 +1,9 @@
 # Firespitter :: Change Log
 
+* 2019-1214: 7.15 (BobPalmer) for KSP 1.8.x
+	+ No changelog provided
+* 2019-1029: 7.14 (BobPalmer) for KSP 1.7.x
+	+ No changelog provided
 * 2019-0825 : 7.13.0.1 (Lisias) for KSP >= 1.3.1
 	+ Certified to work down to 1.3.1 ! #hurray!
 	+ Applying upstream fixes
@@ -12,9 +16,15 @@
 		- Making firespitter compatible with Principia and other mods that relies on `Part.AddForcesAtPosition`
 	+ Using KSPe logging facilities 
 	+ Bumping up version to match upstream's
+* 2019-0825: 7.13.0 (BobPalmer) for KSP 1.6.x
+	+ (now with the correct zip)
+* 2019-0301: 7.12.0 (BobPalmer) for KSP 1.5x
+	+ No changelog provided
 * 2019-0222 : 7.9.0.2 (Lisias) for KSP >= 1.4.0
 	+ Certified for KSP from 1.4.0 to 1.6.1
 	+ Fixed a dumb mistake on reading positions for the FS3WL Water Launch System 
+* 2018-1116: 7.11.0 (BobPalmer) for KSP 1.8.1
+	+ No changelog provided
 * 2018-0801 : 7.9.0.1 (Lisias) Unofficial
 	+ Moving PluginData back to <KSP_ROOT> where it belongs
 	+ Converting some WAV files from ADPCM to PCM, as Unity doesn't support this format.
@@ -109,7 +119,6 @@
 	+ Apache cockpit monitors are off by default to reduce lag. Click a button to turn them on.
 	+ Helicopter engines display a guide arrow to assist in putting them on the right way.
 	+ New texture switch, mesh switch and fuel tank switch modules allows for many varieties in a single part. Added normal-map-only support to tex switch.
-
 WARNING: Note that some parts are still WIP, including some that have replaced parts moved to legacy. This release is not part complete, and should only be used by the very curious 
 * 2014-0531: Legacy Parts (snjo) for KSP 0.23.5
 	+ legacy
@@ -133,4 +142,3 @@ WARNING: Note that some parts are still WIP, including some that have replaced p
 	+ FSmeshSwitch: swap meshes instead of textures for better memory conservation
 * 2014-0406: Final 6.2 (snjo) for KSP 0.23.5
 	+ v6.2 is compiled for KSP v0.23.5 (The ARM mission pack)
-
