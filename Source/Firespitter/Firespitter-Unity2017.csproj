@@ -165,9 +165,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Documentation.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="util\shaders\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

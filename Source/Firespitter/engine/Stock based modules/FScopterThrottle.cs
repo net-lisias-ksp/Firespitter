@@ -1,4 +1,13 @@
-﻿using System.Linq;
+﻿/*
+Firespitter /L
+Copyright 2013-2018, Andreas Aakvik Gogstad (Snjo)
+Copyright 2018-2020, LisiasT
+
+    Developers: LisiasT, Snjo
+
+    This file is part of Firespitter.
+*/
+using System.Linq;
 using UnityEngine;
 
 // This is a rewrite of DYJ's baiscPropSpinner from Damned Aerospace, for use in constatnly spinning helicopter rotors
