@@ -10,11 +10,15 @@ clean() {
 	fi
 }
 
-FILE=$PACKAGE-$VERSION.zip
-echo $FILE
-clean
-zip $FILE ./INSTALL.md
-zip -r $FILE ./GameData/* -x ".*"
-zip -r $FILE ./PluginData/* -x ".*"
-zip -d $FILE __MACOSX "**/.DS_Store"
-mv $FILE ./Archive
+pack_this() {
+	FILE=$PACKAGE-$VERSION.zip
+	echo $FILE
+	clean
+	zip $FILE ./INSTALL.md
+	zip -r $FILE ./GameData/* -x ".*"
+	zip -r $FILE ./PluginData/* -x ".*"
+	zip -d $FILE __MACOSX "**/.DS_Store"
+	mv $FILE ./Archive
+}
+
+# TODO - Pack a version for each Unity

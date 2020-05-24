@@ -41,17 +41,24 @@ deploy_md() {
 
 VERSIONFILE=$PACKAGE.version
 
-check
-cp $VERSIONFILE "./GameData/$TARGETDIR"
-cp CHANGE_LOG.md "./GameData/$TARGETDIR"
-cp KNOWN_ISSUES.md "./GameData/$TARGETDIR"
-cp TODO.md "./GameData/$TARGETDIR"
-cp LICENSE* "./GameData/$TARGETDIR"
-cp NOTICE "./GameData/$TARGETDIR
-cp "Docs/Firespitterpartsguide_april28_2014.pdf" "./GameData/$TARGETDIR"
-deploy_md README.md
+deploy_common() {
+	cp $VERSIONFILE "./GameData/$TARGETDIR"
+	cp CHANGE_LOG.md "./GameData/$TARGETDIR"
+	cp KNOWN_ISSUES.md "./GameData/$TARGETDIR"
+	cp TODO.md "./GameData/$TARGETDIR"
+	cp LICENSE* "./GameData/$TARGETDIR"
+	cp NOTICE "./GameData/$TARGETDIR"
+	cp "Docs/Firespitterpartsguide_april28_2014.pdf" "./GameData/$TARGETDIR"
+}
 
-for dll in $PACKAGE ; do
-    deploy_dev $dll
-    deploy_bin $dll
-done
+deploy_this() {
+	deploy_common
+	for dll in $PACKAGE ; do
+		deploy_dev $dll
+		deploy_bin  $dll
+	done
+}
+
+check
+deploy_this
+deploy_md README.md
