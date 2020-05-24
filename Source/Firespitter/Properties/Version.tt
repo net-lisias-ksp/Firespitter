@@ -83,6 +83,13 @@ namespace <#= PROJECT_NAME #>
 		public const int patch = <#= patch #>;
 		public const int build = <#= build #>;
 		public const string Number = "<#= major #>.<#= minor #>.<#= patch #>.<#= build #>";
-		public const string Text = Number + " /L Unofficial";
+
+    #if UNITY_2019
+        public const string Text = Number + " Unity 2019 /L Unofficial";
+    #elif UNITY_2017
+        public const string Text = Number + " Unity 2017 /L Unofficial";
+    #else
+        public const string Text = Number + " Unity 5 /L Unofficial";
+    #endif
 	}
 }

@@ -78,6 +78,9 @@
     <Reference Include="UnityEngine.InputLegacyModule">
       <HintPath>..\..\..\..\..\..\LIB\managed\1.8.0\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
+    <Reference Include="KSPe.UI">
+      <HintPath>..\..\..\..\..\..\LIB\plugins\KSPe.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="aero\FSbladeLiftSurface.cs" />
@@ -182,6 +185,8 @@
     </Compile>
     <Compile Include="Firespitter.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Properties\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Documentation.txt" />

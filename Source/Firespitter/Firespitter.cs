@@ -8,25 +8,15 @@ Copyright 2018-2019, LisiasT
     This file is part of Firespitter.
 */
 using System;
-using System.IO;
 using UnityEngine;
 using KSP.UI.Screens;
 
 namespace Firespitter
 {
-    [KSPAddon(KSPAddon.Startup.Instantly, true)]
-    internal class Startup : MonoBehaviour
-    {
-        private void Start()
-        {
-            Log.info("Version {0}", Version.Text);
-        }
-    }
-
     [KSPAddon(KSPAddon.Startup.MainMenu , true)]
     public class CategoryFilter : MonoBehaviour
     {
-        private void addIIfilter()
+        private void AddFilter()
         {
             //Loading Textures
             Texture2D unselected = new Texture2D(32, 32);
@@ -63,12 +53,7 @@ namespace Firespitter
 
         private void Awake()
         {
-#if DEBUG
-            Log.debuglevel = 5;
-#else
-            Log.debuglevel = 3;
-#endif
-            GameEvents.onGUIEditorToolbarReady.Add(addIIfilter);
+            GameEvents.onGUIEditorToolbarReady.Add(AddFilter);
         }
     }
 }

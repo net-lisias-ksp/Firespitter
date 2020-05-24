@@ -54,6 +54,9 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\..\LIB\managed\1.4.1\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="KSPe.UI">
+      <HintPath>..\..\..\..\..\..\LIB\plugins\KSPe.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="aero\FSbladeLiftSurface.cs" />
@@ -158,6 +161,8 @@
     </Compile>
     <Compile Include="Firespitter.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Properties\Configuration.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Documentation.txt" />
