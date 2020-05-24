@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFE97E64-BF01-48AF-81EE-6B2610076542}</ProjectGuid>
+    <ProjectGuid>{BFE97E64-BF01-48AF-81EE-6B2610076544}</ProjectGuid>
     <OutputType>Library</OutputType>
     <BaseIntermediateOutputPath>..\..\obj\Unity2017</BaseIntermediateOutputPath>
     <AppDesignerFolder>Properties</AppDesignerFolder>
