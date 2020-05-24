@@ -47,7 +47,8 @@ cp CHANGE_LOG.md "./GameData/$TARGETDIR"
 cp KNOWN_ISSUES.md "./GameData/$TARGETDIR"
 cp TODO.md "./GameData/$TARGETDIR"
 cp LICENSE* "./GameData/$TARGETDIR"
-cp NOTICE "./GameData/$TARGETDIR"
+cp NOTICE "./GameData/$TARGETDIR
+cp "Docs/Firespitterpartsguide_april28_2014.pdf" "./GameData/$TARGETDIR"
 deploy_md README.md
 
 for dll in $PACKAGE ; do
