@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Firespitter")]
-[assembly: AssemblyDescription("Firespitter KSP mod plugin")]
+[assembly: AssemblyDescription("Firespitter /L KSP mod plugin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Bitesized Industries")]
+[assembly: AssemblyCompany("Bitesized Industries, L Aerospace /KSP Division")]
 [assembly: AssemblyProduct("Firespitter")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
-[assembly: AssemblyTrademark("Andreas Aakvik Gogstad")]
+[assembly: AssemblyCopyright("Copyright © 2018-2020")]
+[assembly: AssemblyTrademark("LisiasT")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

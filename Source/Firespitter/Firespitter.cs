@@ -1,7 +1,7 @@
 ﻿/*
 Firespitter /L
 Copyright 2013-2018, Andreas Aakvik Gogstad (Snjo)
-Copyright 2018-2019, LisiasT
+Copyright 2018-2020, LisiasT
 
     Developers: LisiasT
 
