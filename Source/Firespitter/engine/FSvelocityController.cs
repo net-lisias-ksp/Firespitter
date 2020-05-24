@@ -118,7 +118,7 @@ namespace Firespitter.engine
                     if (!resourceReceived)
                         thrustUsed = 0f;
                     if (thrustUsed > 0f)
-                        part.gameObject.GetComponent<Part>().AddForceAtPosition(finalThrust, t.transform.position);
+                        this.part.AddForceAtPosition(finalThrust, t.transform.position);
                 #if !UNITY_2019
                     if (useFX)
                     {
@@ -159,7 +159,7 @@ namespace Firespitter.engine
                 if (thrustModifier > 0f && velocityDirection.magnitude > minVelocityToActivate)
                 {
                     finalThrust = -thrustDirection * thrustModifier * maxThrust;
-                    part.gameObject.GetComponent<Part>().AddForceAtPosition(-thrustDirection * thrustModifier * maxThrust, t.transform.position);
+                    this.part.AddForceAtPosition(-thrustDirection * thrustModifier * maxThrust, t.transform.position);
                 }
                 else
                 {
