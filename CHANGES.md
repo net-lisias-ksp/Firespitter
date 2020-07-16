@@ -1,5 +1,15 @@
 # Firespitter :: Changes
 
+* 2020-0716: 7.15.1 (Lisias) for KSP >= 1.3.x
+	+ Specialised versions for:
+		- Unit 5
+		- Unity 2017
+		- Unity 2019
+	+ Updating changes for Principia (and other add'ons that inspect the force vectors)
+		- And other small revisions on the code 
+	+ Adding KSPe Compatibility services
+	+ Fixed a typo on one Part config
+	+ Bumping Version to catchup with upstream's
 * 2019-0825 : 7.13.0.1 (Lisias) for KSP >= 1.3.1
 	+ Certified to work down to 1.3.1 ! #hurray!
 	+ Applying upstream fixes

@@ -1,5 +1,16 @@
 # Firespitter :: Change Log
 
+* 2020-0716: 7.15.1 (Lisias) for KSP >= 1.3.x
+	+ Specialised versions for:
+		- Unit 5
+		- Unity 2017
+		- Unity 2019
+	+ Updating changes:
+		- for Principia (and other mods that relies on `Part.AddForcesAtPosition`)
+		- Better compliance with KSP's PartModule life's cycle.
+	+ Adding KSPe Compatibility services
+	+ Fixed a typo on one Part config
+	+ Bumping Version to catchup with upstream's
 * 2019-1214: 7.15 (BobPalmer) for KSP 1.8.x
 	+ No changelog provided
 * 2019-1029: 7.14 (BobPalmer) for KSP 1.7.x
