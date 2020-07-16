@@ -175,9 +175,9 @@ namespace Firespitter.engine
             }
         }
 
-        new void Awake()
+        public override void OnAwake()
         {
-            base.Awake();
+            base.OnAwake();
             this.Init();
         }
 

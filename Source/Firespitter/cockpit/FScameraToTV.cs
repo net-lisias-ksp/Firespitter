@@ -39,7 +39,7 @@ public class FScameraToTV : InternalModule
         nightVision = new Material(Shader.Find("Nightvision") ?? Shader.Find("Standard"));
     }
 
-    public void Awake()
+    public override void OnAwake()
     {
         this.Init();
     }

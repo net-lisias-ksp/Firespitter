@@ -75,9 +75,9 @@ namespace Firespitter.engine
             this.washDisc = new GameObject();
         }
 
-        new void Awake()
+        public override void OnAwake()
         {
-            base.Awake();
+            base.OnAwake();
             this.Init();
         }
 
